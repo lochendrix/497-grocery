@@ -12,4 +12,4 @@ server/.env
 
 # General
 .DS_Store
-.env
+# Removing this from gitignore bc its a private repo .env
