@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Login</title>
 </head>
-<body>
-    <h1>Login</h1>
-    <form method="POST">
-        <label>Username:</label>
-        <input type="text" name="username" required>
-        <br>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <input type="submit" value="Login">
-    </form>
-    <p>Don't have an account? <a href="{{ url_for('auth.signup') }}">Sign up here</a></p>
-</body>
+<div class="form-container">
+        <h1>Login</h1>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <p>
+            Don't have an account?
+            <a href="{{ url_for('auth.signup') }}">Sign up here</a>
+        </p>
+    </div>
 </html>

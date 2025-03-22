@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Sign Up</title>
 </head>
-<body>
+<div class="form-container">
     <h1>Sign Up</h1>
     <form method="POST">
         <label>Username:</label>
@@ -19,5 +20,5 @@
         <input type="submit" value="Sign Up">
     </form>
     <p>Already have an account? <a href="{{ url_for('auth.login') }}">Log in here</a></p>
-</body>
+</div>
 </html>

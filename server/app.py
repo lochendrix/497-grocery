@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
+from flask_login import current_user
 from extensions import db, login_manager
 from services.kroger import get_store_info
 from routes.auth import auth_bp  # Authentication routes blueprint (create this file)
@@ -24,6 +25,8 @@ def create_app():
 
     @app.route('/')
     def index():
+        if not current_user.is_authenticated:
+            return redirect(url_for('auth.login'))
         return render_template('index.html')
     
     @app.route('/kroger')
