@@ -9,15 +9,17 @@
 
     </head>
     <body>
+    {% if current_user.is_authenticated %}
         <div id="nav_header">
             <div id="nav_site_name" class="nav_page_text">Grocery Finder App</div>
             <div id="nav_flex_box">
-                <div id="nav_grocery_finder" 
-                    class="nav_page_text nav_selected_text">Grocery Finder</div>
+                <div id="nav_grocery_finder" class="nav_page_text nav_selected_text">Grocery Finder</div>
                 <div id="nav_history" class="nav_page_text">History</div>
                 <div id="nav_summary_goals" class="nav_page_text">Summary/Goals</div>
-                <div id="nav_login_button" class="click_button">
-                    <div id="nav_login_text" class="click_button_text">Log In</div>
+                <div id="nav_logout_button" class="click_button">
+                    <a href="{{ url_for('auth.logout') }}">
+                        <div id="nav_logout_text" class="click_button_text">Log Out</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -43,6 +45,13 @@
         <div id="search_enter_button" class="click_button">
             <div class="click_button_text">Enter</div>
         </div>
+
+        <div id="Kroger_api_enter_button" class="click_button">
+            <a href="{{ url_for('kroger') }}">
+                <div class="click_button_text">Mock Kroger API Call</div>
+            </a>
+        </div>
+
 
 
         <div id="list_of_items">
@@ -330,5 +339,10 @@
             search_button = document.getElementById("search_enter_button");
             search_button.addEventListener("click", generate_recommendations.bind(null, "Meijer"));
         </script>
+        {% else %}
+      <h1>Welcome to the Grocery App</h1>
+      <a href="{{ url_for('auth.login') }}">Login</a> or <a href="{{ url_for('auth.signup') }}">Sign Up</a>
+    {% endif %}
+
     </body>
 </html>

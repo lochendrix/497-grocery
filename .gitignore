@@ -1,14 +1,14 @@
+env/
 # React Frontend
 client/node_modules/
 client/build/
 client/.env
 
 # Flask Backend
-server/venv/
 server/__pycache__/
+server/models/__pycache__/
 server/*.pyc
-server/your-database.db
-server/.env
+server/instance/
 
 # General
 .DS_Store

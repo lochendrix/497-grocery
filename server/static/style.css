@@ -330,6 +330,12 @@
      left: 3%;
  }
 
+  #Kroger_api_enter_button {
+      position: absolute;
+      top: 600px;
+      left: 9%;
+  }
+
 
 
  #list_of_items {
