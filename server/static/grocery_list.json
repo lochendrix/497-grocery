@@ -1,0 +1,56 @@
+[
+    {
+        "Store name": "Kroger",
+        "Product name": "Simple Truth Organic\u00ae Plain Nonfat Greek Yogurt Tub",
+        "image": "https://www.kroger.com/product/images/xlarge/front/0001111010760",
+        "Product cost": 4.99,
+        "Health score": 44.495914083469145,
+        "Cost score": 80.89375014408391,
+        "Nutrititon highlights": [
+            [
+                "Protein",
+                9.33920704845815
+            ],
+            [
+                "Calcium",
+                3.7275499830565906
+            ]
+        ]
+    },
+    {
+        "Store name": "Kroger",
+        "Product name": "Simple Truth Organic\u00ae Gluten Free Chickpea Spaghetti Pasta",
+        "image": "https://www.kroger.com/product/images/xlarge/back/0001111010724",
+        "Product cost": 2.99,
+        "Health score": 48.48150857079428,
+        "Cost score": 36.773953905758724,
+        "Nutrititon highlights": [
+            [
+                "Protein",
+                44.642857142857146
+            ],
+            [
+                "Dietary Fiber",
+                22.95918367346939
+            ]
+        ]
+    },
+    {
+        "Store name": "Kroger",
+        "Product name": "Heritage Farm\u00ae Boneless Skinless Chicken Thighs",
+        "image": "https://www.kroger.com/product/images/xlarge/front/0025313650000",
+        "Product cost": 3.99,
+        "Health score": 0.0,
+        "Cost score": 0.0,
+        "Nutrititon highlights": [
+            [
+                "Protein",
+                23.92857142857143
+            ],
+            [
+                "Iron",
+                3.1746031746031753
+            ]
+        ]
+    }
+]

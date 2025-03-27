@@ -4,6 +4,8 @@ from services.usda import *
 
 from utility import *
 
+from grocery_data_frontend_algs import *
+
 # location_id is a Kroger store ID
 # Product name is a simple name, like "Chicken" (although more detailed names could work)
 def Kroger_find_product(location_id, product_name):
@@ -50,6 +52,4 @@ def Kroger_get_grocery_list(location_id, nutrititon_type=None):
                 if grocery_info != -1:
                     grocery_list.append(grocery_info)
     
-    return grocery_list
-
-
+    return Grocery_List(grocery_list)

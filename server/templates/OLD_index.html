@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> -->
+         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="utf-8">
+        <title></title>
+
+
+    </head>
+    <body>
+    {% if current_user.is_authenticated %}
+        <div id="nav_header">
+            <div id="nav_site_name" class="nav_page_text">Grocery Finder App</div>
+            <div id="nav_flex_box">
+                <div id="nav_grocery_finder" class="nav_page_text nav_selected_text">Grocery Finder</div>
+                <div id="nav_history" class="nav_page_text">History</div>
+                <div id="nav_summary_goals" class="nav_page_text">Summary/Goals</div>
+                <div id="nav_logout_button" class="click_button">
+                    <a href="{{ url_for('auth.logout') }}">
+                        <div id="nav_logout_text" class="click_button_text">Log Out</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="description_flex_box">
+            <div id="description_header">Grocery Finder</div>
+            <div id="description_text">
+                Enter your location to get a summary of nearby groceries, 
+                prioritized by best nutrition-per-dollar. Use the filter 
+                options to specify what types of groceries you're looking for.
+            </div>
+        </div>
+
+
+        <div id="search_location_section">
+            <div id="search_location_bar"></div>
+            <div id="search_location_header">Search Location</div>
+            <div id="search_location_divline"></div>
+            <div id="search_location_entry"></div>
+            <input type="text" id="search_location_entrytext" placeholder="... [Ex: Ann Arbor]">
+        </div>
+
+        <div id="search_enter_button" class="click_button">
+            <div class="click_button_text">Enter</div>
+        </div>
+
+        <div id="Kroger_api_enter_button" class="click_button">
+            <a href="{{ url_for('kroger') }}">
+                <div class="click_button_text">Mock Kroger API Call</div>
+            </a>
+        </div>
+
+
+
+        <div id="list_of_items">
+            <!--
+            <div class="item left">
+                <div class="item_contents">
+                    <h3 class="item_header">Granny Smith Apples</h3>
+                    <p class="item_text">e</p>
+                </div>
+            </div>
+            <div class="item right">
+                <div class="item_contents">
+                    <h3 class="item_header">Granny Smith Apples</h3>
+                    <p class="item_text">e</p>
+                </div>
+            </div>
+            -->
+        </div>
+
+
+
+        <script>
+            /*
+fetch('data.json')
+  .then(response => response.json())  // Parse the JSON content
+  .then(data => {
+    console.log(data);  // Handle the loaded data
+  })
+  .catch(error => {
+    console.error('Error loading the JSON file:', error);
+  });
+
+            */
+
+
+            DAILY_VALUE_TABLE = {
+                "Added Sugar": 50, // g
+                "Calcium": 1300, // mg
+                "Cholesterol": 300, // mg
+                "Dietary Fiber": 28, // g
+                "Fat": 78, // g
+                "Iodine": 150, // mcg
+                "Iron": 18, // mg
+                "Potassium": 4700, // mg
+                "Protein": 50, // g
+                "Saturated Fat": 20, // g
+                "Sodium": 2300, // mg
+                "Total Carbohydrate": 275, // g
+                "Vitamin A": 900, // mcg
+                "Vitamin B6": 1.7, // mg
+                "Vitamin B12": 2.4, // mcg
+                "Vitamin C": 90, // mg
+                "Vitamin D": 200, // mcg
+                "Vitamin K": 120, // mcg
+                "Zinc": 11, // mg
+            };
+            // "Good" components that are typically lacking in a poor diet
+            GREENS = ["Calcium", "Dietary Fiber", "Iron", "Potassium", "Protein",
+                "Vitamin A", "Vitamin B6", "Vitamin B12", "Vitamin C", "Vitamin D",
+                "Vitamin K", "Zinc"
+            ];
+            // "Bad" components that are typically excessive in a poor diet
+            REDS = ["Added Sugar", "Cholesterol", "Fat", 
+                "Saturated Fat", "Total Carbohydrate"
+            ]
+
+
+
+
+            var generate_recommendations = function(store_name) {
+                meijer_product_list = meijer_API_return_MOCK();
+
+                health_score_list = []
+                for (var i = 0; i < meijer_product_list.length; i++) {
+                    health_score_data = get_health_score(meijer_product_list[i]);
+                    product_entry = [i].concat(health_score_data);
+                    health_score_list.push(product_entry);
+                }
+
+                // Sort so the highest score-per cost is first
+                health_score_list.sort(health_score_comp)
+
+                for (var i = 0; i < health_score_list.length; i++) {
+                    health_score = health_score_list[i];
+                    product_info = meijer_product_list[health_score[0]];
+                    best_comps = sort_best_components(product_info);
+
+                    product_entry = {
+                        "Store name": store_name,
+                        "Product name": product_info["Name"],
+                        "Product cost": product_info["Unit Price"],
+                        "Health score": health_score[2],
+                        "Nutrititon highlights": []
+                    };
+
+                    for (var j = 0; j < 3; j++) {
+                        product_entry["Nutrititon highlights"].push(best_comps[j]);
+                    }
+
+                    construct_item(product_entry, store_name);
+                }
+            }
+
+            var MY_LEFT = true;
+            var item_box = document.getElementById("list_of_items");
+            var construct_item = function(product_entry, store_name) {
+                // Creat main item box
+                var item = document.createElement("div");
+                item.classList.add("item");
+                if (MY_LEFT) {
+                    item.classList.add("left");
+                }
+                else {
+                    item.classList.add("right");
+                }
+                MY_LEFT = !MY_LEFT;
+
+                // Add item contents
+                var item_contents = document.createElement("div");
+                item_contents.classList.add("item_contents");
+
+                var item_header = document.createElement("h3");
+                item_header.classList.add("item_header");
+                item_header.innerHTML = product_entry["Product name"];
+
+                var item_text = document.createElement("p");
+                item_text.classList.add("item_text");
+                item_text_str = "";
+                item_text_str += "<u><strong>Our health rating (per dollar): " + 
+                    product_entry["Health score"].toFixed(2) + "</strong></u><br>";
+                
+                item_text_str += "<strong>Store: </strong>" + store_name + "<br>";
+                item_text_str += "<strong>Cost: </strong>$" + 
+                    product_entry["Product cost"] + "<br><br>";
+                item_text_str += "<strong>Nutrititon highlights:</strong>";
+                    item_text_str += "<ul>";
+                for (let i = 0; i < product_entry["Nutrititon highlights"].length; i++) {
+                    component = product_entry["Nutrititon highlights"][i];
+                    item_text_str += "<li><strong>" + component[0] + ":</strong> "
+                        + (100*component[1]).toFixed(1) + "% Daily Value";
+                }
+                item_text_str += "</ul>";
+                item_text.innerHTML = item_text_str;
+
+                item_box.appendChild(item);
+                item.appendChild(item_contents);
+                item_contents.appendChild(item_header);
+                item_contents.appendChild(item_text);
+            }
+
+            function health_score_comp(a, b) {
+                if (a[2] > b[2]) {
+                    return -1;
+                } else if (a[2] < b[2]) {
+                    return 1;
+                }
+                // a must be equal to b
+                return 0;
+            }
+
+            var sort_best_components = function(product_info) {
+                DV_product_info = get_DV_dict_of_product(product_info);
+
+                greens_list = [];
+                for (var i = 0; i < GREENS.length; i++) {
+                    item = GREENS[i];
+                    if (item in DV_product_info) {
+                        greens_list.push([item, DV_product_info[item]]);
+                    }
+                }
+
+                greens_list.sort(greens_list_comp);
+                return greens_list;
+            }
+
+            function greens_list_comp(a, b) {
+                if (a[1] > b[1]) {
+                    return -1;
+                } else if (a[1] < b[1]) {
+                    return 1;
+                }
+                // a must be equal to b
+                return 0;
+            }
+
+            // Mockup of an API return
+            var meijer_API_return_MOCK = function() {
+                return [
+                    {
+                        "Name": "Granny Smith Apples",
+                        "Unit Price": 1.27, // USD
+                        "Unit Weight": 12, // oz
+                        "Nutrition Information Unit Mass": 3.5274, // grams
+                        "Protein": 0, // g
+                        "Fat": 0, // g
+                        "Total Carbohydrate": 14.3, // g
+                        "Dietary Fiber": 3.2, // g
+                        "Calcium": 0, // mg
+                        "Iron": 0.23, // mg
+                        "Potassium": 110, // mg
+                        "Sodium": 0, // mg
+                        "Vitamin C": 3.1, // mg
+                        "Vitamin A": 19.5, // mcg
+                        "Saturated Fat": 0, // g
+                        "Cholesterol": 0, // mg
+                    },
+                    {
+                        "Name": "Orange Juice With Pulp",
+                        "Unit Price": 3.29, // USD
+                        "Unit Weight": 59, // oz
+                        "Nutrition Information Unit Mass": 3.5274, // grams
+                        "Protein": 1.41, // g
+                        "Fat": 0, // g
+                        "Total Carbohydrate": 38, // g
+                        "Dietary Fiber": 0, // g
+                        "Calcium": 493, // mg
+                        "Iron": 0, // mg
+                        "Potassium": 676, // mg
+                        "Sodium": 0, // mg
+                        "Vitamin C": 135, // mg
+                        "Vitamin A": 0, // mcg
+                        "Saturated Fat": 0, // g
+                        "Cholesterol": 0, // mg
+                    },
+                    {
+                        "Name": "Frozen Mango Chunks",
+                        "Unit Price": 3.99, // USD
+                        "Unit Weight": 16, // oz
+                        "Nutrition Information Unit Mass": 3.5274, // grams
+                        "Protein": 0.71, // g
+                        "Fat": 0.36, // g
+                        "Total Carbohydrate": 15, // g
+                        "Dietary Fiber": 1.4, // g
+                        "Calcium": 11, // mg
+                        "Iron": 0, // mg
+                        "Potassium": 168, // mg
+                        "Sodium": 0, // mg
+                        "Vitamin C": 36.4, // mg
+                        "Vitamin A": 54, // mcg
+                        "Saturated Fat": 0, // g
+                        "Cholesterol": 0, // mg
+                    }
+                ];
+            }
+
+            var get_health_score = function(product_info) {
+                product_DV = get_DV_dict_of_product(product_info);
+                product_green_score = get_green_DV_sum_of_product(product_DV);
+                product_red_score = get_red_DV_sum_of_product(product_DV);
+
+                health_score = product_green_score - product_red_score;
+                health_score_per_cost = health_score / product_info["Unit Price"];
+
+                return [health_score, health_score_per_cost];
+            }
+
+            var get_DV_dict_of_product = function(product_info) {
+                var scale = product_info["Unit Weight"] / product_info["Nutrition Information Unit Mass"];
+                var output = {
+                    "Name": product_info["Name"],
+                    "Unit Price": product_info["Unit Price"], // USD
+                };
+
+                for (key in DAILY_VALUE_TABLE) {
+                    if (key in product_info) {
+                        output[key] = product_info[key] / DAILY_VALUE_TABLE[key];
+                    }
+                }
+
+                // The nutrition values in the table are now fractions of daily values
+                return output;
+            }
+
+            var get_green_DV_sum_of_product = function(DV_product_info) {
+                var sum = 0;
+                for (var i = 0; i < GREENS.length; i++) {
+                    item = GREENS[i];
+                    if (item in DV_product_info) {
+                        sum += DV_product_info[item];
+                    }
+                }
+
+                return sum;
+            }
+
+            var get_red_DV_sum_of_product = function(DV_product_info) {
+                var sum = 0;
+                for (var i = 0; i < REDS.length; i++) {
+                    item = REDS[i];
+                    if (item in DV_product_info) {
+                        sum += DV_product_info[item];
+                    }
+                }
+
+                return sum;
+            }
+
+            search_button = document.getElementById("search_enter_button");
+            search_button.addEventListener("click", generate_recommendations.bind(null, "Meijer"));
+        </script>
+    {% endif %}
+
+    </body>
+</html>

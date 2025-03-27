@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_login import current_user
 from extensions import db, login_manager
 from routes.auth import auth_bp  # Authentication routes blueprint (create this file)
@@ -9,6 +9,8 @@ from services.kroger import *
 from services.usda import *
 
 from parsers_and_integration import *
+
+from grocery_data_frontend_algs import *
 
 def create_app():
     app = Flask(__name__)
@@ -41,11 +43,25 @@ def create_app():
         store_info = Kroger_parse_stores_list(store_list)
         
 
-        grocery_list = Kroger_get_grocery_list(store_info["ID"], "Protein")
+        grocery_list_obj = Kroger_get_grocery_list(store_info["ID"], "Protein")
+        grocery_list_obj.full_preparation()
+        output = grocery_list_obj.prep_JSON_for_webpage()
 
+        with open("static/grocery_list.json", "w") as f:
+            f.write(json.dumps(output, indent=4))
 
         # For mockup purposes, just return the string
-        return f"<pre>{json.dumps(grocery_list, indent=4)}</pre>"
+        return render_template('index.html')
+
+    @app.route('/submit', methods=['POST'])
+    def submit():
+        # Get the JSON data sent from the frontend
+        data = request.get_json()
+        text = data.get('text', '')
+        
+        print(text)
+        
+        return render_template('index.html')
 
     return app
 

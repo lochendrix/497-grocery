@@ -82,10 +82,13 @@ def Kroger_parse_product(product):
     product_info = {}
     product_info['Name'] = product['description']
     product_info['Unit Price'] = product['items'][0]['price']['regular']
-    product_info['Unit Size'] = product['items'][0]['size']
+    size = (product['items'][0]['size']).split(" ")
+    product_info['Unit Size'] = int(size[0])
+    product_info['Unit Size units'] = size[1]
     product_info['Category'] = product['categories'][0]
     product_info['upcID'] = product['upc']
     product_info['image_url'] = product['images'][0]['sizes'][0]['url']
+    product_info['store'] = 'Kroger'
 
     return product_info
 
