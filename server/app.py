@@ -1,9 +1,27 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_login import current_user
 from extensions import db, login_manager
-from services.kroger import get_store_info
 from routes.auth import auth_bp  # Authentication routes blueprint (create this file)
 import os
+import json
+
+from services.kroger import *
+from services.usda import *
+
+
+# FIXME: Belongs in a helper file
+# location_id is a Kroger store ID
+# Product name is a simple name, like "Chicken" (although more detailed names could work)
+def Kroger_find_product(location_id, product_name):
+    product_info = Kroger_get_product_info(location_id, product_name)
+    product_brand = product_info['data'][0]['brand']
+    product_USDA_info = USDA_find_top_result_by_name(product_brand + " " + product_name)
+    product_info = Kroger_get_product_info(location_id, product_USDA_info['description'])
+
+    return [product_info['data'][0], product_USDA_info]
+
+
+
 
 def create_app():
     app = Flask(__name__)
@@ -32,9 +50,17 @@ def create_app():
     @app.route('/kroger')
     def kroger():
         # Call the Kroger API code and get the result string
-        store_info = get_store_info()
+        store_count, store_list = Kroger_get_store_list("48109")
+        store_info = Kroger_parse_stores_list(store_list)
+        
+
+        product_info = Kroger_find_product(store_info["ID"], 'Chicken')
+        product_info_kroger = Kroger_parse_product(product_info[0])
+        product_info_USDA = USDA_parse_nutrition_info(product_info[1])
+        product_info = product_info_kroger | product_info_USDA
+        
         # For mockup purposes, just return the string
-        return f"<pre>{store_info}</pre>"
+        return f"<pre>{json.dumps(product_info, indent=4)}</pre>"
 
     return app
 
