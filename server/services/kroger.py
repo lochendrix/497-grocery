@@ -47,15 +47,12 @@ def Kroger_get_store_list(zip_code_str):
     return output, store_data
 
 
-
 def Kroger_parse_stores_list(stores_list):
     return_dict = {}
     return_dict["ID"] = stores_list["locationId"]
     return_dict["street"] = stores_list["address"]["addressLine1"]
     return_dict["city"] = stores_list["address"]["city"]
     return return_dict
-
-
 
 
 

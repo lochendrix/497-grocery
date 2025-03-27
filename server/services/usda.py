@@ -48,7 +48,6 @@ def USDA_query_nutrition_of_item(item_key):
     auth = os.getenv("USDA_API_NAME")
 
     url_of_request = "https://api.nal.usda.gov/fdc/v1/foods/search?api_key=" + auth + "&query=" + str(item_key) + "" # Weird "" is needed
-    print(url_of_request)
     resp = requests.get(url_of_request)
     info = resp.json()
     

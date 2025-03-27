@@ -19,5 +19,84 @@ NUTRITION_CODES = {
 }
 
 ITEMS_BY_NUTRITION = {
-    'Protein': ['Chicken']
+    "Protein": [
+        "Chicken Breast",
+        "Turkey Breast",
+        "Tofu",
+        "Salmon",
+        "Greek Yogurt",
+        "Eggs"
+    ],
+    "Calcium": [
+        "Milk",
+        "Cheese",
+        "Yogurt",
+        "Kale",
+        "Almonds"
+    ],
+    "Iron": [
+        "Spinach",
+        "Lentils",
+        "Beef",
+        "Kidney Beans"
+    ],
+    "Sodium": [
+        "Soy Sauce",
+        "Canned Soup",
+        "Pickles",
+        "Pretzels"
+    ],
+    "Vitamin A": [
+        "Carrots",
+        "Sweet Potatoes",
+        "Butternut Squash",
+        "Kale"
+    ],
+    "Cholesterol": [
+        "Eggs",
+        "Shrimp",
+        "Liver",
+        "Butter"
+    ],
+    "Saturated Fat": [
+        "Butter",
+        "Coconut Oil",
+        "Cheese",
+        "Cream"
+    ],
+    "Carbohydrate": [
+        "Bread",
+        "Pasta",
+        "Rice",
+        "Oats"
+    ],
+    "Energy": [
+        "Peanut Butter",
+        "Avocado",
+        "Nuts",
+        "Granola"
+    ],
+    "Total Sugars": [
+        "Candy",
+        "Fruit Juice",
+        "Soft Drinks",
+        "Syrup"
+    ],
+    "Dietary Fiber": [
+        "Broccoli",
+        "Chia Seeds",
+        "Berries",
+        "Whole Grain Bread"
+    ],
+    "Potassium": [
+        "Bananas",
+        "White Beans",
+        "Avocado",
+        "Potatoes"
+    ],
+    "Trans Fat": [
+        "Margarine",
+        "Shortening",
+        "Fried Foods"
+    ]
 }
