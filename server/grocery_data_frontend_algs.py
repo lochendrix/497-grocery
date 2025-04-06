@@ -1,3 +1,5 @@
+import re
+import logging
 from utility import *
 from functools import cmp_to_key
 
@@ -23,7 +25,7 @@ class Grocery_List:
             self.list[i]['Unit Size units'] = 'g'
             
             unit_size_conv_factor = unit_conversion_factor('g', self.list[i]['serving_size_unit'])
-            self.list[i]['serving_size'] *= unit_size_conv_factor
+            self.list[i]['serving_size'] *= round(unit_size_conv_factor)
             self.list[i]['serving_size_unit'] = 'g'
 
             for key in self.list[i]['nutrients']:
@@ -38,7 +40,15 @@ class Grocery_List:
     def standardize_serving_size(self):
         for i in range(len(self.list)):
             # What to multiply by
-            scale_factor = 100.0 / self.list[i]['serving_size']
+            serving = self.list[i]['serving_size']
+            logging.debug(self.list[i])
+            if isinstance(serving, (int, float)):
+                numeric_serving = serving
+            else:
+                numeric_serving = int(re.sub(r'\D', '', serving))
+            if numeric_serving == 0:
+                numeric_serving = 100.0  # Default to 100g if serving size is not a number
+            scale_factor = 100.0 / numeric_serving
             self.list[i]['serving_size'] = 100.0
 
             for key in self.list[i]['nutrients']:

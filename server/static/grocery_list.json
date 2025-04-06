@@ -1,29 +1,33 @@
 [
     {
         "Store name": "Kroger",
-        "Product name": "Simple Truth Organic\u00ae Plain Nonfat Greek Yogurt Tub",
-        "image": "https://www.kroger.com/product/images/xlarge/front/0001111010760",
-        "Product cost": 4.99,
-        "Health score": 44.495914083469145,
-        "Cost score": 80.89375014408391,
+        "Product name": "Green Giant Simply Steam Tuscan Seasoned Broccoli",
+        "image": "https://www.kroger.com/product/images/xlarge/front/0002000044712",
+        "Product cost": 2.29,
+        "Health score": 1188.1786816020858,
+        "Cost score": 1323.8359991559169,
         "Nutrititon highlights": [
             [
-                "Protein",
-                9.33920704845815
+                "Vitamin C",
+                870.0
             ],
             [
-                "Calcium",
-                3.7275499830565906
+                "Dietary Fiber",
+                85.71428571428571
+            ],
+            [
+                "Potassium",
+                65.1063829787234
             ]
         ]
     },
     {
         "Store name": "Kroger",
-        "Product name": "Simple Truth Organic\u00ae Gluten Free Chickpea Spaghetti Pasta",
-        "image": "https://www.kroger.com/product/images/xlarge/back/0001111010724",
-        "Product cost": 2.99,
-        "Health score": 48.48150857079428,
-        "Cost score": 36.773953905758724,
+        "Product name": "Simple Truth Organic\u00ae 100% Whole Wheat Spaghetti",
+        "image": "https://www.kroger.com/product/images/xlarge/back/0004126033483",
+        "Product cost": 1.69,
+        "Health score": 144.87381218916178,
+        "Cost score": 388.8378829497413,
         "Nutrititon highlights": [
             [
                 "Protein",
@@ -37,19 +41,45 @@
     },
     {
         "Store name": "Kroger",
-        "Product name": "Heritage Farm\u00ae Boneless Skinless Chicken Thighs",
-        "image": "https://www.kroger.com/product/images/xlarge/front/0025313650000",
-        "Product cost": 3.99,
+        "Product name": "Private Selection\u00ae Frozen Triple Berry Medley",
+        "image": "https://www.kroger.com/product/images/large/front/0001111087808",
+        "Product cost": 4.49,
+        "Health score": 178.7852820150693,
+        "Cost score": 180.6137497545196,
+        "Nutrititon highlights": [
+            [
+                "Vitamin C",
+                25.77777777777777
+            ],
+            [
+                "Dietary Fiber",
+                19.523809523809522
+            ],
+            [
+                "Iron",
+                4.074074074074074
+            ]
+        ]
+    },
+    {
+        "Store name": "Kroger",
+        "Product name": "Simple Truth\u00ae Walnut Pieces",
+        "image": "https://www.kroger.com/product/images/xlarge/front/0001111002470",
+        "Product cost": 9.99,
         "Health score": 0.0,
         "Cost score": 0.0,
         "Nutrititon highlights": [
             [
                 "Protein",
-                23.92857142857143
+                111.33333333333331
+            ],
+            [
+                "Dietary Fiber",
+                79.76190476190477
             ],
             [
                 "Iron",
-                3.1746031746031753
+                44.44444444444444
             ]
         ]
     }

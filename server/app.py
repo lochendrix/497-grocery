@@ -4,6 +4,9 @@ from extensions import db, login_manager
 from routes.auth import auth_bp  # Authentication routes blueprint (create this file)
 import os
 import json
+import requests
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 from services.kroger import *
 from services.usda import *
@@ -39,19 +42,57 @@ def create_app():
     @app.route('/kroger')
     def kroger():
         # Call the Kroger API code and get the result string
-        store_count, store_list = Kroger_get_store_list("48109")
+        zipcode = request.args.get('zipcode')
+        if zipcode is None:
+            zipcode = 48109
+
+        def zipcode_to_location(zipcode):
+            url = f'http://api.zippopotam.us/us/{zipcode}'
+            logging.debug(f"Requesting location info from {url}")
+            response = requests.get(url)
+            logging.debug(f"Response status code: {response.status_code}")
+            if response.status_code == 200:
+                data = response.json()
+                logging.debug(f"Received data: {data}")
+                if 'places' in data and len(data['places']) > 0:
+                    place = data['places'][0]
+                    city = place.get('place name', '')
+                    state = place.get('state', '')
+                    location_str = f"{city}, {state}"
+                    logging.debug(f"Parsed location: {location_str}")
+                    return location_str
+                else:
+                    logging.debug("No places found in response.")
+            if response.status_code != 200:
+                try:
+                    error_info = response.json()
+                    logging.error(f"API Error: {error_info}")
+                except Exception as e:
+                    logging.error(f"API returned status {response.status_code} but could not parse JSON. Response: {response.text}")
+            return None
+        
+        location = zipcode_to_location(zipcode)
+        logging.debug(f"Location: {location}")
+
+        store_count, store_list = Kroger_get_store_list(zipcode)
         store_info = Kroger_parse_stores_list(store_list)
+
+        nutrition_area = request.args.get('nutrition')
         
 
-        grocery_list_obj = Kroger_get_grocery_list(store_info["ID"], "Protein")
+        grocery_list_obj = Kroger_get_grocery_list(store_info["ID"], nutrition_area)
         grocery_list_obj.full_preparation()
         output = grocery_list_obj.prep_JSON_for_webpage()
 
         with open("static/grocery_list.json", "w") as f:
             f.write(json.dumps(output, indent=4))
 
+        
+
+        context = {"location_in": location,}
+
         # For mockup purposes, just return the string
-        return render_template('index.html')
+        return render_template('index.html', **context)
 
     @app.route('/submit', methods=['POST'])
     def submit():

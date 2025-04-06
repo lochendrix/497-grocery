@@ -1,4 +1,4 @@
-
+import logging
 from services.kroger import *
 from services.usda import *
 
@@ -16,7 +16,15 @@ def Kroger_find_product(location_id, product_name):
 
     # Search that product name with brand on USDA to get a result 
     # likely DOES have a Kroger entry
-    product_USDA_info = USDA_find_top_result_by_name(product_brand + " " + product_name)
+    query = f"{product_brand} {product_name}"
+    logging.debug(f"USDA query: {query}")
+    product_USDA_info = USDA_find_top_result_by_name(query)
+    logging.debug(f"USDA info got: {product_USDA_info}")
+
+     # If the USDA search returns nothing, try with just the product name
+    if not product_USDA_info:
+        logging.debug("USDA query with brand returned no result. Trying with product name only.")
+        product_USDA_info = USDA_find_top_result_by_name(product_name)
     # Find the corresponding Kroger entry
     product_info = Kroger_get_product_info(location_id, product_USDA_info['description'])
 
@@ -33,6 +41,7 @@ def Kroger_get_final_product_info(location_id, product_name):
 
         return product_info
     except:
+        logging.exception("An error occurred while trying to get final product info.")
         return -1
 
 # Get final info for a bunch of groceries

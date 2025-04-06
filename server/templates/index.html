@@ -33,36 +33,55 @@
             </div>
         </div>
 
+<form id="search_location_form" action="{{ url_for('kroger') }}" method="GET">
+  <div id="search_container">
+    <div id="search_location_section">
+      <div id="search_location_bar"></div>
+      <div id="search_location_header">Search Location</div>
+      <div id="search_location_divline"></div>
+      <div id="search_location_entry"></div>
+      <input type="text" id="search_location_entrytext" name="zipcode" placeholder="... [Ex: 48109]">
+    </div>
 
-        <div id="search_location_section">
-            <div id="search_location_bar"></div>
-            <div id="search_location_header">Search Location</div>
-            <div id="search_location_divline"></div>
-            <div id="search_location_entry"></div>
-            <input type="text" id="search_location_entrytext" placeholder="... [Ex: Ann Arbor]">
-        </div>
+    <div id="nutrition_selector">
+      <label for="nutrition">Select Nutrient:</label>
+      <select id="nutrition" name="nutrition">
+        <option value="Calcium">Calcium</option>
+        <option value="Iron">Iron</option>
+        <option value="Sodium">Sodium</option>
+        <option value="Vitamin A">Vitamin A</option>
+        <option value="Vitamin C">Vitamin C</option>
+        <option value="Cholesterol">Cholesterol</option>
+        <option value="Saturated Fat">Saturated Fat</option>
+        <option value="Protein">Protein</option>
+        <option value="Carbohydrate">Carbohydrate</option>
+        <option value="Energy">Energy</option>
+        <option value="Total Sugars">Total Sugars</option>
+        <option value="Dietary Fiber">Dietary Fiber</option>
+        <option value="Potassium">Potassium</option>
+        <option value="Trans Fat">Trans Fat</option>
+        <option value="Total Fat">Total Fat</option>
+      </select>
+    </div>
 
-        <div id="search_enter_button" class="click_button">
-            <a href="{{ url_for('kroger') }}" class="click_button_text">Enter</a>
-        </div>
+    <div id="search_enter_button" class="click_button">
+      <input type="submit" class="click_button_text" value="Enter">
+    </div>
+  </div>
+</form>
+
 
 
         <div id="list_of_items">
-            <!--
-            <div class="item left">
-                <div class="item_contents">
-                    <h3 class="item_header">Granny Smith Apples</h3>
-                    <p class="item_text">e</p>
-                </div>
+            <div id="location">
+                  {% if location_in %}
+                <h2>Showing results for {{ location_in }}:</h2>
+                {% endif %}
             </div>
-            <div class="item right">
-                <div class="item_contents">
-                    <h3 class="item_header">Granny Smith Apples</h3>
-                    <p class="item_text">e</p>
-                </div>
-            </div>
-            -->
+
         </div>
+
+    
 
 
 

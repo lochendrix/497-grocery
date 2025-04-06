@@ -347,6 +347,10 @@
      top: 728px;
  }
 
+ #location {
+     margin-left: 60px;
+ }
+
  .item {
      /* Rectangle 5 */
 
@@ -484,3 +488,26 @@
      border: 1px solid #ccc;
      border-radius: 4px;
  }
+
+ input[type="submit"].click_button_text {
+     background-color: transparent;
+     border: none;
+     box-shadow: none;
+     -webkit-appearance: none;
+     outline: none;
+ }
+
+ /* Remove focus styling */
+ input[type="submit"].click_button_text:focus {
+     outline: none;
+     background-color: transparent;
+ }
+
+ #search_container {
+     position: relative;
+     /* or static */
+     margin-top: 20px;
+     /* Adjust as needed */
+ }
+
+ 
