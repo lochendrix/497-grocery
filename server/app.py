@@ -80,7 +80,7 @@ def create_app():
         nutrition_area = request.args.get('nutrition')
         
 
-        grocery_list_obj = Kroger_get_grocery_list(store_info["ID"], nutrition_area)
+        grocery_list_obj = Kroger_get_grocery_list(store_info, nutrition_area)
         grocery_list_obj.full_preparation()
         output = grocery_list_obj.prep_JSON_for_webpage()
 
@@ -92,8 +92,16 @@ def create_app():
         context = {"location_in": location,}
 
         # For mockup purposes, just return the string
-        return render_template('index.html', **context)
+        return render_template('index.html')#, **context)
+    
+    @app.route('/save-json', methods=['POST'])
+    def save_json():
+        data = request.json
+        with open('data.json', 'w') as f:
+            json.dump(data, f, indent=2)
+        return 'Data saved to JSON!', 200
 
+    '''
     @app.route('/submit', methods=['POST'])
     def submit():
         # Get the JSON data sent from the frontend
@@ -103,6 +111,7 @@ def create_app():
         print(text)
         
         return render_template('index.html')
+    '''
 
     return app
 

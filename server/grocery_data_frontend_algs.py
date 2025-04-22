@@ -67,17 +67,24 @@ class Grocery_List:
 
     # Insert a health score for each grocery
     def health_score_groceries(self):
-        min_score = 999999
+        min_score =  999999
+        max_score = -999999
         for i in range(len(self.list)):
             green_score = get_filtered_DV_sum_of_product(self.list[i]['nutrients'], GREENS)
-            red_score = get_filtered_DV_sum_of_product(self.list[i]['nutrients'], REDS)
-            self.list[i]['health_score'] = green_score - red_score
+            # FIXME: I'm testing out removing the reds; they reduce the score too much, 
+            # and unhealthy things don't have enough greens to increase their score much anyways
+            #red_score = get_filtered_DV_sum_of_product(self.list[i]['nutrients'], REDS)
+            self.list[i]['health_score'] = green_score# - red_score
             if self.list[i]['health_score'] < min_score:
                 min_score = self.list[i]['health_score']
+            if self.list[i]['health_score'] > max_score:
+                max_score = self.list[i]['health_score']
         
-        # Adjust scores so the min is 0
+        # Adjust scores
+        #for i in range(len(self.list)):
+        #    self.list[i]['health_score'] -= min_score # Sets min to 0
         for i in range(len(self.list)):
-            self.list[i]['health_score'] -= min_score
+            self.list[i]['health_score'] /= max_score # Scales to [0, 1]
 
     # Insert a cost (health adjusted) score for each grocery
     # NOTE: ONLY CALL AFTER health_score_groceries
@@ -131,7 +138,10 @@ class Grocery_List:
             "Product cost": self.list[idx]["Unit Price"],
             "Health score": self.list[idx]["health_score"],
             "Cost score": self.list[idx]["cost_score"],
-            "Nutrititon highlights": self.list[idx]['highlights']
+            "Nutrititon highlights": self.list[idx]['highlights'],
+            "upcID": self.list[idx]['upcID'],
+            "Street": self.list[idx]['Street'],
+            "City": self.list[idx]['City']
         }
         return js_entry
 

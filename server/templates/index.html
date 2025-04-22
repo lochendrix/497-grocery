@@ -33,72 +33,133 @@
             </div>
         </div>
 
-<form id="search_location_form" action="{{ url_for('kroger') }}" method="GET">
-  <div id="search_container">
-    <div id="search_location_section">
-      <div id="search_location_bar"></div>
-      <div id="search_location_header">Search Location</div>
-      <div id="search_location_divline"></div>
-      <div id="search_location_entry"></div>
-      <input type="text" id="search_location_entrytext" name="zipcode" placeholder="... [Ex: 48109]">
-    </div>
+    <form id="search_location_form" action="{{ url_for('kroger') }}" method="GET">
+        <div id="search_container">
+            <div id="location_input" class="input_field_region">
+            <div class="input_field_background"></div>
+            <div id="location_input_field_header" class="input_field_header">Search Location:</div>
+            <!--<div id="location_input_field_divline" class="input_field_divline"></div>-->
+            <input type="text" id="location_input_field_input_text" class="input_field_input_text" 
+                name="zipcode" placeholder="... [Ex: 48109]">
+            </div>
 
-    <div id="nutrition_selector">
-      <label for="nutrition">Select Nutrient:</label>
-      <select id="nutrition" name="nutrition">
-        <option value="Calcium">Calcium</option>
-        <option value="Iron">Iron</option>
-        <option value="Sodium">Sodium</option>
-        <option value="Vitamin A">Vitamin A</option>
-        <option value="Vitamin C">Vitamin C</option>
-        <option value="Cholesterol">Cholesterol</option>
-        <option value="Saturated Fat">Saturated Fat</option>
-        <option value="Protein">Protein</option>
-        <option value="Carbohydrate">Carbohydrate</option>
-        <option value="Energy">Energy</option>
-        <option value="Total Sugars">Total Sugars</option>
-        <option value="Dietary Fiber">Dietary Fiber</option>
-        <option value="Potassium">Potassium</option>
-        <option value="Trans Fat">Trans Fat</option>
-        <option value="Total Fat">Total Fat</option>
-      </select>
-    </div>
+            <div id="nutrition_selector" class="input_field_region">
+                <div class="input_field_background"></div>
+                <label for="nutrition" id="nutrition_input_field_header" class="input_field_header">Select Nutrient:</label>
+                <select id="nutrition" class="input_field_input_text" name="nutrition">
+                    <option value="Calcium">Calcium</option>
+                    <option value="Iron">Iron</option>
+                    <option value="Sodium">Sodium</option>
+                    <option value="Vitamin A">Vitamin A</option>
+                    <option value="Vitamin C">Vitamin C</option>
+                    <option value="Cholesterol">Cholesterol</option>
+                    <option value="Saturated Fat">Saturated Fat</option>
+                    <option value="Protein">Protein</option>
+                    <option value="Carbohydrate">Carbohydrate</option>
+                    <option value="Energy">Energy</option>
+                    <option value="Total Sugars">Total Sugars</option>
+                    <option value="Dietary Fiber">Dietary Fiber</option>
+                    <option value="Potassium">Potassium</option>
+                    <option value="Trans Fat">Trans Fat</option>
+                    <option value="Total Fat">Total Fat</option>
+                </select>
+            </div>
 
-    <div id="search_enter_button" class="click_button">
-      <input type="submit" class="click_button_text" value="Enter">
-    </div>
-  </div>
-</form>
+            <div id="search_enter_button" class="click_button">
+            <input type="submit" class="click_button_text" value="Enter">
+            </div>
+        </div>
+    </form>
 
-
-
+        
         <div id="list_of_items">
             <div id="location">
-                  {% if location_in %}
+                {% if location_in %}
                 <h2>Showing results for {{ location_in }}:</h2>
                 {% endif %}
             </div>
 
+            <div id="left_side_list"></div>
+            <div id="right_side_list"></div>
         </div>
 
-    
+
+        <!-- FORM FOR PROMPTING GROCERY LIST SAVING -->
+        <form id="saveGroceryList">
+            <button type="submit">Send</button>
+        </form>
+
+        <!--
+        <div class="score_box">
+            <div class="health_box">
+                <h3 class="score_header">Health Score</h3>
+                <p class="score_value">&#11088; &#11088; &#11088;</p>
+            </div>
+            <div class="cost_box">
+                <h3 class="score_header">Cost Score</h3>
+                <p class="score_value">&#11088; &#11088;</p>
+            </div>
+        </div>
+        -->
 
 
 
         <script>
+            /////////////// RENDER GROCERIES ONTO LIST ///////////////
+            var construct_star_boxes = function(scores_box, h_score, c_score) {
+                // Create health score box and contents
+                var health_score_box = document.createElement("div");
+                health_score_box.classList.add("health_box");
+                var health_score_header = document.createElement("h3");
+                health_score_header.classList.add("score_header");
+                health_score_header.innerHTML = "Health Score";
+                var health_score_content = document.createElement("p");
+                health_score_content.classList.add("score_value");
+                for (var i = 0; i < 5; i++) {
+                    if (i <= h_score*5) {
+                        health_score_content.innerHTML += "&#11088;";
+                    }
+                    else {
+                        health_score_content.innerHTML += "<span style='font-size:48px'>&#9734;</span>";
+                    }
+                }
+
+                // Create cost score box and contents
+                var cost_score_box = document.createElement("div");
+                cost_score_box.classList.add("cost_box");
+                var cost_score_header = document.createElement("h3");
+                cost_score_header.classList.add("score_header");
+                cost_score_header.innerHTML = "Cost Score";
+                var cost_score_content = document.createElement("p");
+                cost_score_content.classList.add("score_value");
+                for (var i = 0; i < 5; i++) {
+                    if (i <= c_score*5) {
+                        cost_score_content.innerHTML += "&#11088;";
+                    }
+                    else {
+                        cost_score_content.innerHTML += "<span style='font-size:48px'>&#9734;</span>";
+                    }
+                }
+
+                scores_box.appendChild(health_score_box);
+                health_score_box.appendChild(health_score_header);
+                health_score_box.appendChild(health_score_content);
+                scores_box.appendChild(cost_score_box);
+                cost_score_box.appendChild(cost_score_header);
+                cost_score_box.appendChild(cost_score_content);
+            }
+
             var MY_LEFT = true;
-            var item_box = document.getElementById("list_of_items");
+            var left_item_box = document.getElementById("left_side_list");
+            var right_item_box = document.getElementById("right_side_list");
+
+            // FIXME: 
+            // '&#11088;' is the filled star symbol
+            // '&#9734;' is the empty star symbol
             var construct_item = function(product_entry) {
-                // Creat main item box
+                // Create main item box
                 var item = document.createElement("div");
                 item.classList.add("item");
-                if (MY_LEFT) {
-                    item.classList.add("left");
-                }
-                else {
-                    item.classList.add("right");
-                }
-                MY_LEFT = !MY_LEFT;
 
                 // Add item contents
                 var item_contents = document.createElement("div");
@@ -113,15 +174,25 @@
                 item_img.src = product_entry["image"];
 
 
+                // Create main scores box and add scores
+                var main_score_box = document.createElement("div");
+                main_score_box.classList.add("score_box");
+                construct_star_boxes(main_score_box, 
+                    product_entry["Health score"], product_entry["Cost score"])
+
                 var item_text = document.createElement("p");
                 item_text.classList.add("item_text");
                 item_text_str = "";
+                /*
                 item_text_str += "<u><strong>Our health rating: " + 
                     product_entry["Health score"].toFixed(2) + "</strong></u><br>";
                 item_text_str += "<u><strong>Our cost rating: " + 
                     product_entry["Cost score"].toFixed(2) + "</strong></u><br>";
+                */
                 
-                item_text_str += "<strong>Store: </strong>" + product_entry["Store name"] + "<br>";
+                item_text_str += "<strong>Store: </strong>" + product_entry["Store name"] 
+                    + ", at " + product_entry["Street"] + ", " + product_entry["City"]
+                    + "<br>";
                 item_text_str += "<strong>Cost: </strong>$" + 
                     product_entry["Product cost"] + "<br><br>";
                 item_text_str += "<strong>Nutrititon highlights:</strong>";
@@ -134,13 +205,21 @@
                 item_text_str += "</ul>";
                 item_text.innerHTML = item_text_str;
 
-                item_box.appendChild(item);
+                var item_box_to_add_to = right_item_box;
+                if (MY_LEFT) {
+                    item_box_to_add_to = left_item_box;
+                }
+                MY_LEFT = !MY_LEFT;
+
+                item_box_to_add_to.appendChild(item);
                 item.appendChild(item_contents);
                 item_contents.appendChild(item_header);
                 item_contents.appendChild(item_img);
+                item_contents.appendChild(main_score_box);
                 item_contents.appendChild(item_text);
             }
 
+            /////////////// LOAD OLD DATA INTO PAGE ///////////////
             fetch('/static/grocery_list.json')
             .then(response => response.json())  // Parse the JSON content
             .then(data => {
@@ -152,6 +231,26 @@
             .catch(error => {
                 console.error('Error loading the JSON file:', error);
             });
+
+            /////////////// SCRIPT FOR SAVING GROCERY LIST ///////////////
+            document.getElementById('saveGroceryList').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const data = [0,1,2]; // Placeholder
+                
+                const response = await fetch('/save-json', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.text();
+                alert(result);
+            });
+
+            
         </script>
     {% endif %}
 

@@ -32,12 +32,14 @@ def Kroger_find_product(location_id, product_name):
     return [product_info['data'][0], product_USDA_info]
 
 # Parse through Kroger and USDA API returns to get final info for one product
-def Kroger_get_final_product_info(location_id, product_name):
+def Kroger_get_final_product_info(store_info, product_name):
     try:
-        product_info = Kroger_find_product(location_id, product_name)
+        product_info = Kroger_find_product(store_info['ID'], product_name)
         product_info_kroger = Kroger_parse_product(product_info[0])
         product_info_USDA = USDA_parse_nutrition_info(product_info[1])
         product_info = product_info_kroger | product_info_USDA
+        product_info['Street'] = store_info['street']
+        product_info['City'] = store_info['city']
 
         return product_info
     except:
@@ -45,19 +47,19 @@ def Kroger_get_final_product_info(location_id, product_name):
         return -1
 
 # Get final info for a bunch of groceries
-def Kroger_get_grocery_list(location_id, nutrititon_type=None):
+def Kroger_get_grocery_list(store_info, nutrititon_type=None):
     grocery_list = []
     # If the user specified a nutritition type
     if nutrititon_type in ITEMS_BY_NUTRITION:
         for grocery in ITEMS_BY_NUTRITION[nutrititon_type]:
-            grocery_info = Kroger_get_final_product_info(location_id, grocery)
+            grocery_info = Kroger_get_final_product_info(store_info, grocery)
             if grocery_info != -1:
                 grocery_list.append(grocery_info)
     # If the user didn't specify a nutritition type
     else:
         for nutrient in ITEMS_BY_NUTRITION:
             for grocery in ITEMS_BY_NUTRITION[nutrient]:
-                grocery_info = Kroger_get_final_product_info(location_id, grocery)
+                grocery_info = Kroger_get_final_product_info(store_info, grocery)
                 if grocery_info != -1:
                     grocery_list.append(grocery_info)
     

@@ -1,4 +1,10 @@
- img {
+#saveGroceryList {
+    position: absolute;
+    z-index: 10;
+}
+
+
+img {
     width: 100%
  }
 
@@ -230,284 +236,351 @@
 
 
 
- /* Group 5 */
- #search_location_section {
-     position: absolute;
-     width: 94%;
-     height: 70px;
-     left: 3%;
-     top: 517px;
- }
-
-
-
- /* Rectangle 2 */
- #search_location_bar {
-     box-sizing: border-box;
-
-     position: absolute;
-     width: 100%;
-     height: 70px;
-
-     background: #444444;
-     border: 1px solid #000000;
-     border-radius: 20px;
- }
-
-
- /* Rectangle 3 */
- #search_location_entry {
-     box-sizing: border-box;
-
-     position: absolute;
-     width: calc(98% - 271px);
-     height: 61px;
-     left: 271px;
-     top: 4.5px;
-
-     background: #F0F0F0;
-     border: 1px solid #000000;
-     border-radius: 20px;
- }
-
-
- /* Search Location */
- #search_location_header {
-     position: absolute;
-     width: 235px;
-     height: 42px;
-     left: 26px;
-     top: 13px;
-
-     font-family: 'Inter';
-     font-style: normal;
-     font-weight: 400;
-     font-size: 28px;
-     line-height: 150%;
-     /* identical to box height, or 42px */
-     display: flex;
-     align-items: center;
-
-     color: #FFFFFF;
- }
-
-
- /* Line 1 */
- #search_location_divline {
-     position: absolute;
-     width: 0px;
-     height: 54px;
-     left: 257px;
-     top: 6px;
-
-     background: #FFFFFF;
-     border: 2px solid #FFFFFF;
- }
-
-
- /* ... [Ex: Ann Arbor] */
- #search_location_entrytext {
-     position: absolute;
-     width: calc(94% - 271px);
-     height: 51px;
-     left: 291px;
-     top: 9px;
-
-     font-family: 'Inter';
-     font-style: normal;
-     font-weight: 500;
-     font-size: 28px;
-     line-height: 150%;
-     /* or 42px */
-     display: flex;
-     align-items: center;
-
-     color: #000000;
-
-     background: transparent;
-     border: none;
- }
-
- #search_enter_button {
-     position: absolute;
-     top: 600px;
-     left: 3%;
- }
-
-  #Kroger_api_enter_button {
-      position: absolute;
-      top: 600px;
-      left: 9%;
-  }
-
-
-
- #list_of_items {
-     position: relative;
-     top: 728px;
- }
-
- #location {
-     margin-left: 60px;
- }
-
- .item {
-     /* Rectangle 5 */
-
-     box-sizing: border-box;
-
-     position: relative;
-     width: 43%;
-
-     background: #FFFDF4;
-     border: 2px solid #000000;
-     border-radius: 50px;
-
-     margin-bottom: 50px;
-
- }
-
- .left {
-     left: 5%;
-     float: left;
- }
-
- .right {
-     right: 5%;
-     float: right;
- }
-
- .item_contents {
-     position: relative;
-     width: 96%;
-     left: 2%;
- }
-
- .item_header {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: flex-start;
-     padding: 0px;
-     gap: 4px;
-
-     position: relative;
-     width: 95%;
-     left: 5%;
-
-     font-family: 'Inter';
-     font-style: normal;
-     font-weight: 900;
-     font-size: 32px;
-     line-height: 150%;
-     color: #000000;
-
-     flex: none;
-     order: 0;
-     align-self: stretch;
-     flex-grow: 0;
- }
-
- .item_text {
-     position: relative;
-     left: 5%;
-
-     font-family: 'Inter';
-     font-style: normal;
-     font-weight: 400;
-     font-size: 24px;
-     line-height: 150%;
-
-     color: #333333;
- }
-
- /* --- Form Container --- */
- .form-container {
-     max-width: 400px;
-     margin: 2rem auto;
-     padding: 2rem;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-     background-color: #fafafa;
- }
-
- .form-container h1 {
-     margin-top: 0;
-     margin-bottom: 1rem;
- }
-
- .form-container label {
-     display: block;
-     margin-top: 1rem;
-     font-weight: 500;
- }
-
- .form-container input[type="text"],
- .form-container input[type="password"] {
-     width: 100%;
-     padding: 0.5rem;
-     margin-top: 0.5rem;
-     border: 1px solid #ccc;
-     border-radius: 4px;
- }
-
- .form-container input[type="submit"] {
-     margin-top: 1.5rem;
-     padding: 0.5rem 1rem;
-     background-color: #000;
-     color: #fff;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     font-size: 1rem;
- }
-
- .form-container input[type="submit"]:hover {
-     opacity: 0.8;
- }
-
- .form-container p {
-     margin-top: 1rem;
- }
-
- .form-container a {
-     color: #000;
-     text-decoration: none;
- }
-
- .form-container a:hover {
-     text-decoration: underline;
- }
-
- input[type="text"],
- input[type="email"],
- input[type="password"] {
-     width: 100%;
-     padding: 0.5rem;
-     margin-top: 0.5rem;
-     border: 1px solid #ccc;
-     border-radius: 4px;
- }
-
- input[type="submit"].click_button_text {
-     background-color: transparent;
-     border: none;
-     box-shadow: none;
-     -webkit-appearance: none;
-     outline: none;
- }
-
- /* Remove focus styling */
- input[type="submit"].click_button_text:focus {
-     outline: none;
-     background-color: transparent;
- }
-
- #search_container {
-     position: relative;
-     /* or static */
-     margin-top: 20px;
-     /* Adjust as needed */
- }
-
  
+
+.input_field_region {
+    position: absolute;
+    height: 70px;
+    left: 3%;
+}
+
+#location_input {
+    width: 450px;
+    top: 517px;
+}
+
+#nutrition_selector {
+    top: 517px;
+    left: 550px;
+    width: 450px;
+}
+
+
+.input_field_background {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 100%;
+    height: 70px;
+
+    background: #444444;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+
+.input_field_header {
+    position: absolute;
+    width: 235px;
+    height: 42px;
+    top: 13px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 150%;
+    /* identical to box height, or 42px */
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+#location_input_field_header {
+    left: 26px;
+}
+
+#nutrition_input_field_header {
+    left: 26px;
+}
+
+
+.input_field_divline {
+    position: absolute;
+    width: 0px;
+    height: 54px;
+    top: 6px;
+
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+#location_input_field_divline {
+    left: 240px;
+}
+
+
+/* ... [Ex: Ann Arbor] */
+.input_field_input_text {
+    position: absolute;
+    z-index: 10;
+
+    box-sizing: border-box;    
+    height: 61px;
+    top: 4.5px;
+
+    margin: 0px;
+    padding-left: 10px;
+
+    background: #F0F0F0;
+    border: 1px solid #000000;
+    border-radius: 20px;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+#location_input_field_input_text {
+    width: calc(98% - 230px);
+    left: 230px;
+}
+
+#nutrition {
+    width: 200px;
+    left: 230px;
+}
+
+
+#search_enter_button {
+    position: absolute;
+    top: 620px;
+    left: 47%;
+    widtH: 6%
+}
+
+#Kroger_api_enter_button {
+    position: absolute;
+    top: 600px;
+    left: 9%;
+}
+
+
+
+#list_of_items {
+    position: absolute;
+    top: 800px;
+    width: 100%
+}
+
+#left_side_list {
+    position: absolute;
+    left: 3%;
+    width: 45%;
+}
+#right_side_list {
+    position: absolute;
+    right: 3%;
+    width: 45%;
+}
+
+#location {
+    margin-left: 60px;
+}
+
+.item {
+    /* Rectangle 5 */
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    background: #FFFDF4;
+    border: 2px solid #000000;
+    border-radius: 50px;
+
+    margin-bottom: 50px;
+
+}
+
+.item_contents {
+    position: relative;
+    width: 96%;
+    left: 2%;
+}
+
+.item_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+
+    position: relative;
+    width: 95%;
+    left: 5%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 150%;
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.item_text {
+    position: relative;
+    left: 5%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+
+    color: #333333;
+}
+
+
+/* STAR BOXES */
+.score_box {
+    position: relative;
+    height: 150px;
+    width: 80%;
+    left: 10%;
+
+    margin-top: 25px;
+}
+
+.health_box {
+    position: absolute;
+    height: 150px;
+    width: 44%;
+    left: 0%;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgb(146, 146, 146);
+    border: 3px solid black;
+}
+
+.cost_box {
+    position: absolute;
+    height: 150px;
+    width: 44%;
+    right: 0%;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgb(146, 146, 146);
+    border: 3px solid black;
+}
+
+.score_header {
+    margin: 8px;
+
+    font-size: 32px;
+    text-align: center;
+}
+
+.score_value {
+    margin: 8px;
+
+    font-size: 32px;
+    text-align: center;
+}
+
+
+
+
+/* --- Form Container --- */
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.form-container h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container input[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-container input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+.form-container p {
+    margin-top: 1rem;
+}
+
+.form-container a {
+    color: #000;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/*input[type="text"],*/
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"].click_button_text {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+/* Remove focus styling */
+input[type="submit"].click_button_text:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+#search_container {
+    position: relative;
+    /* or static */
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
