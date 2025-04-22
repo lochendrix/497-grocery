@@ -91,11 +91,12 @@ def create_app():
             f.write(json.dumps(output, indent=4))
 
         
-
-        context = {"location_in": location,}
+        nutrition_area = nutrition_area.lower()
+        context = {"location_in": location,
+                   "nutrition_area": nutrition_area}
 
         # For mockup purposes, just return the string
-        return render_template('index.html')#, **context)
+        return render_template('index.html', **context)
     
     @app.route('/save-current-grocery-list', methods=['POST'])
     def save_current_grocery_list():

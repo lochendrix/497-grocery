@@ -37,6 +37,7 @@ img {
      font-weight: 500;
      font-size: 24px;
      line-height: 150%;
+     
 
      display: flex;
      align-items: center;
@@ -46,6 +47,7 @@ img {
      flex: none;
      order: 0;
      flex-grow: 0;
+    text-align: center;
  }
 
 .click_button:hover {
@@ -128,14 +130,14 @@ img {
     align-items: center;
     justify-content: center;
     color: rgb(0, 0, 0);
-    background-color: rgb(224, 199, 114);
+    background-color: #FFFDF4;
     
     border: 1px solid #000000;
     border-radius: 20px;
 }
 
 #nav_grocery_list_display:hover {
-    background-color: rgb(236, 223, 147);
+    background-color: #fcf2c5;
 }
 
 #nav_grocery_list_display:active {
@@ -146,7 +148,7 @@ img {
      /* Grocery Finder */
 
      width: 143px;
-     height: 30px;
+     height: 108px;
 
 
      /* Inside auto layout */
@@ -159,7 +161,7 @@ img {
      /* History */
 
      width: 70px;
-     height: 30px;
+     height: 108px;
 
 
      /* Inside auto layout */
@@ -172,7 +174,7 @@ img {
      /* Summary/Goals */
 
      width: 152px;
-     height: 30px;
+     height: 108px;
 
 
      /* Inside auto layout */
@@ -218,7 +220,8 @@ img {
      position: absolute;
      width: 844px;
      height: 209px;
-     left: 79px;
+     left: 50%;
+     transform: translateX(-50%);
      top: 212px;
  }
 
@@ -226,7 +229,8 @@ img {
      /* Grocery Finder */
 
      width: 844px;
-     height: 77px;
+     height: 108px;
+     text-align: center;
 
      font-family: 'Inter';
      font-style: normal;
@@ -388,8 +392,9 @@ img {
 #search_enter_button {
     position: absolute;
     top: 620px;
-    left: 47%;
-    width: 6%
+    left: 42%;
+    width: 10%;
+    text-align: center;
 }
 
 #Kroger_api_enter_button {
@@ -528,8 +533,8 @@ img {
     left: 0%;
     padding-right: 10px;
     padding-left: 10px;
-    background-color: rgb(146, 146, 146);
-    border: 3px solid black;
+    background-color: #E8F5E9;
+    border: 3px solid #66BB6A;
 }
 
 .cost_box {
@@ -539,8 +544,8 @@ img {
     right: 0%;
     padding-right: 10px;
     padding-left: 10px;
-    background-color: rgb(146, 146, 146);
-    border: 3px solid black;
+    background-color: #fcf2d0;
+    border: 3px solid #FFEB3B;
 }
 
 .score_header {
@@ -599,6 +604,7 @@ img {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    text-align: center;
 }
 
 .form-container input[type="submit"]:hover {
@@ -634,18 +640,20 @@ input[type="submit"].click_button_text {
     box-shadow: none;
     -webkit-appearance: none;
     outline: none;
+    text-align: center;
 }
 
 /* Remove focus styling */
 input[type="submit"].click_button_text:focus {
     outline: none;
     background-color: transparent;
+    text-align: center;
 }
 
 #search_container {
     position: relative;
-    /* or static */
-    margin-top: 20px;
+    width: 1050px;
+    margin: 20px auto 0;    
     /* Adjust as needed */
 }
 
