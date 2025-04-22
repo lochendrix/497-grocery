@@ -69,8 +69,8 @@
                 //for (item in trip_data['groceries']) {
                     nutrititon_info = trip_data['groceries'][i]['nutrients'];
                     counter = trip_data['groceries'][i]['count'];
-                    for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
-                        var nutrient = NUTRITITON_COMPONENTS[i];
+                    for (var j = 0; j < NUTRITITON_COMPONENTS.length; j++) {
+                        var nutrient = NUTRITITON_COMPONENTS[j];
                         if (nutrient in nutrititon_info) {
                             trip_nutrition[nutrient] += counter*nutrititon_info[nutrient]['value'];
                         }
@@ -97,10 +97,10 @@
                 var trip_entry_header = document.createElement("h3");
                 trip_entry_header.classList.add("trip_entry_header");
                 var timestamp = trip_data["timestamp"];
-                var date = new Date(1748000000000);
-                //trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
-                    //+ " " + date.getDay() + ", " + date.getFullYear();
-                trip_entry_header.innerHTML = "April 22, 2025"
+                var date = new Date(timestamp * 1000);
+                trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
+                    + " " + date.getDate() + ", " + date.getFullYear();
+                //trip_entry_header.innerHTML = "April 22, 2025"
                 
 
                 var trip_entry_list_container = document.createElement("div");

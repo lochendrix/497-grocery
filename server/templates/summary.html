@@ -109,8 +109,8 @@
                 //for (item in trip_data['groceries']) {
                     nutrititon_info = trip_data['groceries'][i]['nutrients'];
                     counter = trip_data['groceries'][i]['count'];
-                    for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
-                        var nutrient = NUTRITITON_COMPONENTS[i];
+                    for (var j = 0; j < NUTRITITON_COMPONENTS.length; j++) {
+                        var nutrient = NUTRITITON_COMPONENTS[j];
                         if (nutrient in nutrititon_info) {
                             trip_nutrition[nutrient] += counter*nutrititon_info[nutrient]['value'];
                         }
@@ -156,7 +156,7 @@
                 TRIP_TIMESTAMPS.push(timestamp);
                 var date = new Date(timestamp * 1000);
                 trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
-                    + " " + date.getDay() + ", " + date.getFullYear();
+                    + " " + date.getDate() + ", " + date.getFullYear();
 
                 var trip_entry_selector = document.createElement("button");
                 trip_entry_selector.classList.add("trip_entry_selector");
@@ -225,8 +225,7 @@
             }
 
             GREENS = ["Calcium", "Dietary Fiber", "Iron", "Potassium", "Protein",
-                "Vitamin A", "Vitamin B6", "Vitamin B12", "Vitamin C", "Vitamin D",
-                "Vitamin K", "Zinc"
+                "Vitamin A", "Vitamin C", "Vitamin D",
             ]
 
             ITEMS_BY_NUTRITION = {
@@ -366,7 +365,7 @@
             }
 
 
-            BAR_COLORS = ["red", "orange", "yellow", "greenyellow", "green"]
+            BAR_COLORS = ["red", "orange", "#FFD700", "greenyellow", "green"]
 
             var render_recommendation = async function(rec_box_num, rec_item) {
                 var rec_box = document.getElementById("rec" + rec_box_num);
@@ -377,7 +376,7 @@
                 rec_header.innerHTML = rec_item[0];
                 rec_bar.style.width = (300*rec_item[1]) + "px";
                 bar_color_selected = Math.round(4*rec_item[1]);
-                rec_bar.style.background_color = BAR_COLORS[bar_color_selected];
+                rec_bar.style.backgroundColor = BAR_COLORS[bar_color_selected];
 
                 rec_text.innerHTML = "You're currently only consuming " + (100*rec_item[1]).toFixed(0) 
                     + "% of the recommended daily amount of " + rec_item[0] 
@@ -430,6 +429,35 @@
 
             var update_selected_load_summary = async function(days) {
                 DAY_WINDOW = days;
+
+                week_btn = document.getElementById("week_window");
+                month_btn = document.getElementById("month_window");
+                year_btn = document.getElementById("year_window");
+                if (days == 7) {
+                    week_btn.style.backgroundColor = "#000000";
+                    week_btn.style.color = "#FFFFFF";
+                    month_btn.style.backgroundColor = "#FFFFFF";
+                    month_btn.style.color = "#000000";
+                    year_btn.style.backgroundColor = "#FFFFFF";
+                    year_btn.style.color = "#000000";
+                }
+                if (days == 28) {
+                    week_btn.style.backgroundColor = "#FFFFFF";
+                    week_btn.style.color = "#000000";
+                    month_btn.style.backgroundColor = "#000000";
+                    month_btn.style.color = "#FFFFFF";
+                    year_btn.style.backgroundColor = "#FFFFFF";
+                    year_btn.style.color = "#000000";
+                }
+                if (days == 365) {
+                    week_btn.style.backgroundColor = "#FFFFFF";
+                    week_btn.style.color = "#000000";
+                    month_btn.style.backgroundColor = "#FFFFFF";
+                    month_btn.style.color = "#000000";
+                    year_btn.style.backgroundColor = "#000000";
+                    year_btn.style.color = "#FFFFFF";
+                }
+
                 
                 for (var i = 0; i < TRIP_TIMESTAMPS.length; i++) {
                     this_timestamp = TRIP_TIMESTAMPS[i];
