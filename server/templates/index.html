@@ -13,8 +13,9 @@
         <div id="nav_header">
             <div id="nav_site_name" class="nav_page_text">Grocery Finder App</div>
             <div id="nav_flex_box">
+                <div id="nav_grocery_list_display" class="nav_page_text">View Grocery List</div>
                 <div id="nav_grocery_finder" class="nav_page_text nav_selected_text">Grocery Finder</div>
-                <div id="nav_history" class="nav_page_text">History</div>
+                <a id="nav_history" class="nav_page_text" href="/history">History</a>
                 <div id="nav_summary_goals" class="nav_page_text">Summary/Goals</div>
                 <div id="nav_logout_button" class="click_button">
                     <a href="{{ url_for('auth.logout') }}">
@@ -47,6 +48,7 @@
                 <div class="input_field_background"></div>
                 <label for="nutrition" id="nutrition_input_field_header" class="input_field_header">Select Nutrient:</label>
                 <select id="nutrition" class="input_field_input_text" name="nutrition">
+                    <option value="None">None</option>
                     <option value="Calcium">Calcium</option>
                     <option value="Iron">Iron</option>
                     <option value="Sodium">Sodium</option>
@@ -66,7 +68,7 @@
             </div>
 
             <div id="search_enter_button" class="click_button">
-            <input type="submit" class="click_button_text" value="Enter">
+                <input type="submit" class="click_button_text" value="Enter">
             </div>
         </div>
     </form>
@@ -102,7 +104,13 @@
         </div>
         -->
 
-
+        <div id="grocery_list_popup_overlay"></div>
+        <div id="grocery_list_popup">
+            <h3 id="grocery_list_header">Current Grocery List</h3>
+            <button id="clear_grocery_list">CLEAR LIST</button>
+            <button id="save_grocery_list">SAVE LIST</button>
+            <p id="grocery_list_list"></p>
+        </div>
 
         <script>
             /////////////// RENDER GROCERIES ONTO LIST ///////////////
@@ -152,10 +160,6 @@
             var MY_LEFT = true;
             var left_item_box = document.getElementById("left_side_list");
             var right_item_box = document.getElementById("right_side_list");
-
-            // FIXME: 
-            // '&#11088;' is the filled star symbol
-            // '&#9734;' is the empty star symbol
             var construct_item = function(product_entry) {
                 // Create main item box
                 var item = document.createElement("div");
@@ -169,8 +173,18 @@
                 item_header.classList.add("item_header");
                 item_header.innerHTML = product_entry["Product name"];
 
+                // Add button for interaction
+                var item_add_button = document.createElement("button");
+                item_add_button.classList.add('item_add_button');
+                item_add_button.id = product_entry['upcID'];
+                item_add_button.innerHTML = "Add";
+                item_add_button.addEventListener("click", function() {
+                    addGroceryItem(item_add_button)
+                    }
+                );
+
                 var item_img = document.createElement("img");
-                console.log(product_entry["image"])
+                //console.log(product_entry["image"])
                 item_img.src = product_entry["image"];
 
 
@@ -183,12 +197,6 @@
                 var item_text = document.createElement("p");
                 item_text.classList.add("item_text");
                 item_text_str = "";
-                /*
-                item_text_str += "<u><strong>Our health rating: " + 
-                    product_entry["Health score"].toFixed(2) + "</strong></u><br>";
-                item_text_str += "<u><strong>Our cost rating: " + 
-                    product_entry["Cost score"].toFixed(2) + "</strong></u><br>";
-                */
                 
                 item_text_str += "<strong>Store: </strong>" + product_entry["Store name"] 
                     + ", at " + product_entry["Street"] + ", " + product_entry["City"]
@@ -214,41 +222,133 @@
                 item_box_to_add_to.appendChild(item);
                 item.appendChild(item_contents);
                 item_contents.appendChild(item_header);
+                item_contents.appendChild(item_add_button);
                 item_contents.appendChild(item_img);
                 item_contents.appendChild(main_score_box);
                 item_contents.appendChild(item_text);
             }
 
-            /////////////// LOAD OLD DATA INTO PAGE ///////////////
-            fetch('/static/grocery_list.json')
+            /////////////// LOAD GROCERY SEARCH DATA INTO PAGE ///////////////
+            GROCERIES_FOUND = {} // Holds raw data
+            fetch('/static/grocery_results.json')
             .then(response => response.json())  // Parse the JSON content
             .then(data => {
                 console.log(data)
-                for (var i = 0; i < data.length; i++) {
-                    construct_item(data[i])
+                for (var i = 0; i < data[1].length; i++) {
+                    construct_item(data[1][i]);
+                    GROCERIES_FOUND[data[0][i]["upcID"]] = data[0][i];
                 }
             })
             .catch(error => {
                 console.error('Error loading the JSON file:', error);
             });
 
-            /////////////// SCRIPT FOR SAVING GROCERY LIST ///////////////
-            document.getElementById('saveGroceryList').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const data = [0,1,2]; // Placeholder
-                
-                const response = await fetch('/save-json', {
+            /////////////// LOAD GROCERY LIST DATA INTO PAGE ///////////////
+
+
+            /////////////// CODE FOR CREATING GROCERY LIST ///////////////
+            GROCERY_LIST = {}
+            fetch('/static/current_grocery_list.json')
+            .then(response => response.json())  // Parse the JSON content
+            .then(data => {
+                //console.log(data)
+                for (key in data) {
+                    GROCERY_LIST[key] = data[key];
+                }
+            })
+            .catch(error => {
+                console.error('Error loading the JSON file:', error);
+            });
+
+            async function addGroceryItem(button) {
+                button.textContent = "Added!";
+
+                if (button.id in GROCERY_LIST) {
+                    GROCERY_LIST[button.id]['count'] += 1;
+                }
+                else {
+                    GROCERY_LIST[button.id] = GROCERIES_FOUND[button.id];
+                    GROCERY_LIST[button.id]['count'] = 1;
+                }
+                //console.log(GROCERY_LIST);
+
+                const response = await fetch('/save-current-grocery-list', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(GROCERY_LIST)
+                });
+                
+                //const result = await response.text();
+                //alert(result);
+
+                // After 0.5 seconds, restore original text
+                setTimeout(() => {
+                    button.textContent = "Add";
+                }, 500);
+            }
+
+            /////////////// CODE FOR DISPLAYING GROCERY LIST ///////////////
+            GROCERY_LIST_IS_DISPLAYED = false;
+            var display_grocery_list = function() {
+                var nav_grocery_list_display = document.getElementById('nav_grocery_list_display');
+                var grocery_list_popup_overlay = document.getElementById('grocery_list_popup_overlay');
+                var grocery_list_popup = document.getElementById('grocery_list_popup');
+                
+                if (GROCERY_LIST_IS_DISPLAYED) {
+                    grocery_list_popup_overlay.style.display = 'none';
+                    grocery_list_popup.style.display = 'none';
+                    nav_grocery_list_display.innerHTML = "View Grocery List";
+                    GROCERY_LIST_IS_DISPLAYED = false;
+                }
+                else {
+                    var grocery_list_list = document.getElementById('grocery_list_list');
+                    grocery_list_list.innerHTML = "";
+                    for (key in GROCERY_LIST) {
+                        grocery_list_list.innerHTML += "&nbsp;&nbsp;-&nbsp;&nbsp;" + GROCERY_LIST[key]['Name']
+                        grocery_list_list.innerHTML += "&nbsp;&nbsp;(" + GROCERY_LIST[key]['count'] + "x)<br>"
+                    }
+
+                    grocery_list_popup_overlay.style.display = 'block';
+                    grocery_list_popup.style.display = 'block';
+                    nav_grocery_list_display.innerHTML = "Hide Grocery List";
+                    GROCERY_LIST_IS_DISPLAYED = true;
+                }
+            }
+            document.getElementById('nav_grocery_list_display').addEventListener('click', display_grocery_list)
+
+
+            /////////////// CODE FOR SAVING/CLEARING GROCERY LIST ///////////////
+            document.getElementById('save_grocery_list').addEventListener('click', async function(e) {
+                e.preventDefault();
+                
+                // Reformatting GROCERY_LIST
+                GROCERY_LIST_history_format = {
+                    'groceries': [],
+                }
+                for (key in GROCERY_LIST) {
+                    GROCERY_LIST_history_format['groceries'].push(GROCERY_LIST[key]);
+                }
+
+                const response = await fetch('/save-final-grocery-list', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(GROCERY_LIST_history_format)
                 });
                 
                 const result = await response.text();
                 alert(result);
             });
+
+            var clear_grocery_list_func = function() {
+                GROCERY_LIST = {};
+                var grocery_list_list = document.getElementById('grocery_list_list');
+                grocery_list_list.innerHTML = "";
+            }
+            document.getElementById('clear_grocery_list').addEventListener('click', clear_grocery_list_func)
 
             
         </script>

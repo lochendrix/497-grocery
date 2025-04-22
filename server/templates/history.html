@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> -->
+         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="utf-8">
+        <title></title>
+
+
+    </head>
+    <body>
+    {% if current_user.is_authenticated %}
+        <div id="nav_header">
+            <div id="nav_site_name" class="nav_page_text">Grocery Finder App</div>
+            <div id="nav_flex_box">
+                <a id="nav_grocery_finder" class="nav_page_text" href="/">Grocery Finder</a>
+                <div id="nav_history" class="nav_page_text nav_selected_text">History</div>
+                <div id="nav_summary_goals" class="nav_page_text">Summary/Goals</div>
+                <div id="nav_logout_button" class="click_button">
+                    <a href="{{ url_for('auth.logout') }}">
+                        <div id="nav_logout_text" class="click_button_text">Log Out</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="description_flex_box">
+            <div id="description_header">Grocery Trip History</div>
+            <div id="description_text">
+                A simple list of your previous grocery trips.
+            </div>
+        </div>
+
+        <script>
+            /////////////// CODE FOR CREATING GROCERY LIST ///////////////
+            GROCERY_TRIP_LIST = []
+            fetch('/static/current_grocery_list.json')
+            .then(response => response.json())  // Parse the JSON content
+            .then(data => {
+                //console.log(data)
+                for (var i = 0; i < length(data); i++) {
+                    GROCERY_LIST.push(data[i]);
+                }
+            })
+            .catch(error => {
+                console.error('Error loading the JSON file:', error);
+            });
+
+            for (var i = length(GROCERY_TRIP_LIST) - 1; i >= 0; i++) {
+                // TODO: parse entry and display
+            }
+
+
+        </script>
+    {% endif %}
+    </body>
+</html>

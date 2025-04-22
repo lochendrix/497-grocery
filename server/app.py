@@ -15,6 +15,8 @@ from parsers_and_integration import *
 
 from grocery_data_frontend_algs import *
 
+import time
+
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
@@ -78,13 +80,14 @@ def create_app():
         store_info = Kroger_parse_stores_list(store_list)
 
         nutrition_area = request.args.get('nutrition')
+        if nutrition_area == 'None':
+            nutrition_area = None
         
-
         grocery_list_obj = Kroger_get_grocery_list(store_info, nutrition_area)
         grocery_list_obj.full_preparation()
         output = grocery_list_obj.prep_JSON_for_webpage()
 
-        with open("static/grocery_list.json", "w") as f:
+        with open("static/grocery_results.json", "w") as f:
             f.write(json.dumps(output, indent=4))
 
         
@@ -94,12 +97,29 @@ def create_app():
         # For mockup purposes, just return the string
         return render_template('index.html')#, **context)
     
-    @app.route('/save-json', methods=['POST'])
-    def save_json():
+    @app.route('/save-current-grocery-list', methods=['POST'])
+    def save_current_grocery_list():
         data = request.json
-        with open('data.json', 'w') as f:
+        with open('static/current_grocery_list.json', 'w') as f:
             json.dump(data, f, indent=2)
         return 'Data saved to JSON!', 200
+    
+    @app.route('/save-final-grocery-list', methods=['POST'])
+    def save_final_grocery_list():
+        new_data = request.json
+        new_data['timestamp'] = time.time()
+
+        existing_data = []
+        try:
+            with open('static/user_grocery_list_log.json', 'r') as f:
+                existing_data = json.load(f)
+        except:
+            pass
+
+        existing_data.append(new_data)
+        with open('static/user_grocery_list_log.json', 'w') as f:
+            json.dump(existing_data, f, indent=2)
+        return 'Saved grocery list to your history!', 200
 
     '''
     @app.route('/submit', methods=['POST'])
@@ -112,6 +132,12 @@ def create_app():
         
         return render_template('index.html')
     '''
+
+    @app.route('/history')
+    def history():
+        if not current_user.is_authenticated:
+            return redirect(url_for('auth.login'))
+        return render_template('history.html')
 
     return app
 

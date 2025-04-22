@@ -108,11 +108,13 @@ class Grocery_List:
     def prep_JSON_for_webpage(self):
         self.grab_3_nutrition_highlights()
 
-        json_list = []
+        json_list_raw = []
+        json_list_parsed = []
         for i in range(len(self.list)):
-            json_list.append(self.make_JS_entry_from_list_entry(i))
+            json_list_raw.append(self.list[i])
+            json_list_parsed.append(self.make_JS_entry_from_list_entry(i))
         
-        return json_list
+        return [json_list_raw, json_list_parsed]
 
     def grab_3_nutrition_highlights(self):
         for i in range(len(self.list)):
