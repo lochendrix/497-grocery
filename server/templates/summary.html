@@ -32,7 +32,47 @@
             </div>
         </div>
 
-        <div id="trip_list"></div>
+        <div id="summary_selector">
+            <h3 id="summary_selector_header">Groceries that covered me for the past...</h3>
+            <div id="time_window_buttons">
+                <button id="week_window" class="summary_selector_button" onclick="update_selected_load_summary(7)">Week</button>
+                <button id="month_window" class="summary_selector_button" onclick="update_selected_load_summary(28)">Month</button>
+                <button id="year_window" class="summary_selector_button" onclick="update_selected_load_summary(365)">Year</button>
+            </div>
+            <div id="list_of_trips"></div>
+        </div>
+
+        <div id="summary">
+            <h3 id="summary_header">Daily Nutrititon Intake</h3>
+            <p id="nutrition_info_content"></p>
+        </div>
+
+        <div id="recommendations">
+            <h3 id="recommendations_header">Goals and Recommendations</h3>
+            <h4 id="recommendations_subheader">It is recommended that you increase the amount of these nutrients in your diet, based on the summary above:</h4>
+            <div id="recommendations_container">
+                <div id="rec1" class="rec_entry">
+                    <h4 class="rec_header" id="rec1_header">FILLER</h4>
+                    <div class="rec_bar_background" id="rec1_bar_background"></div>
+                    <div class="rec_bar" id="rec1_bar"></div>
+                    <p class="rec_text" id="rec1_text">Words Words Words</p>
+                </div>
+                <div id="rec_divline1" class="rec_divline"></div>
+                <div id="rec2" class="rec_entry">
+                    <h4 class="rec_header" id="rec2_header">FILLER</h4>
+                    <div class="rec_bar_background" id="rec2_bar_background"></div>
+                    <div class="rec_bar" id="rec2_bar"></div>
+                    <p class="rec_text" id="rec2_text">Words Words Words</p>
+                </div>
+                <div id="rec_divline2" class="rec_divline"></div>
+                <div id="rec3" class="rec_entry">
+                    <h4 class="rec_header" id="rec3_header">FILLER</h4>
+                    <div class="rec_bar_background" id="rec3_bar_background"></div>
+                    <div class="rec_bar" id="rec3_bar"></div>
+                    <p class="rec_text" id="rec3_text">Words Words Words</p>
+                </div>
+            </div>
+        </div>
 
         <script>
             NUTRITITON_COMPONENTS = [
@@ -82,6 +122,7 @@
 
             /////////////// CODE FOR LOADING GROCERY HISTORY ///////////////
             GROCERY_TRIP_LIST = []
+            GROCERY_TRIP_LIST_MODDED = {}
 
             async function fetch_data() {
                 try {
@@ -95,14 +136,326 @@
                     throw error;
                 }
             }
-            
+
+            TRIP_TIMESTAMPS = [];
+            GREY_OR_WHITE = true;
+            var load_trip_entry = async function(trip_data) {
+                var trip_entry = document.createElement("div");
+                trip_entry.classList.add("trip_entry");
+                if (GREY_OR_WHITE) {
+                    trip_entry.classList.add("trip_entry_grey");
+                }
+                else {
+                    trip_entry.classList.add("trip_entry_white");
+                }
+                GREY_OR_WHITE = !GREY_OR_WHITE
+
+                var trip_entry_header = document.createElement("h3");
+                trip_entry_header.classList.add("trip_entry_header");
+                var timestamp = trip_data["timestamp"];
+                TRIP_TIMESTAMPS.push(timestamp);
+                var date = new Date(timestamp * 1000);
+                trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
+                    + " " + date.getDay() + ", " + date.getFullYear();
+
+                var trip_entry_selector = document.createElement("button");
+                trip_entry_selector.classList.add("trip_entry_selector");
+                trip_entry_selector.classList.add("deselected");
+                trip_entry_selector.innerHTML = "X";
+                trip_entry_selector.id = trip_data["timestamp"];
+                trip_entry_selector.addEventListener("click", function() {
+                    trip_entry_click(trip_entry_selector)
+                    }
+                );
+
+
+                var list_of_trips = document.getElementById("list_of_trips");
+                list_of_trips.appendChild(trip_entry);
+                trip_entry.appendChild(trip_entry_header);
+                trip_entry.appendChild(trip_entry_selector);
+            }
+
+            var trip_entry_click = async function(button) {
+                selected = button.classList.contains("selected");
+                if (selected) {
+                    button.classList.remove("selected");
+                    button.classList.add("deselected");
+                }
+                else {
+                    button.classList.remove("deselected");
+                    button.classList.add("selected");
+                }
+
+                await load_summary_and_recs();
+            }
+
             var load_full_history = async function() {
                 const populatedData = await fetch_data();
                 GROCERY_TRIP_LIST = populatedData;
                 for (var i = GROCERY_TRIP_LIST.length - 1; i >= 0; i--) {
-                    create_trip_entry(GROCERY_TRIP_LIST[i]);
+                    await load_trip_entry(GROCERY_TRIP_LIST[i]);
+                    GROCERY_TRIP_LIST_MODDED[GROCERY_TRIP_LIST[i]["timestamp"]] = GROCERY_TRIP_LIST[i];
                 }
+
+                await update_selected_load_summary(7);
             }
+
+
+            var get_total_selected_nutrition = async function() {
+                total_nutrition = {}
+                for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
+                    var nutrient = NUTRITITON_COMPONENTS[i];
+                    total_nutrition[nutrient] = 0;
+                }
+
+                for (var i = 0; i < TRIP_TIMESTAMPS.length; i++) {
+                    this_timestamp = TRIP_TIMESTAMPS[i];
+                    selection_button = document.getElementById(this_timestamp);
+                    selected = selection_button.classList.contains("selected");
+                    if (selected) {
+                        this_nutrititon_info = await get_trip_nutrititon_info(GROCERY_TRIP_LIST_MODDED[this_timestamp]);
+
+                        for (nutrient in this_nutrititon_info) {
+                            total_nutrition[nutrient] += this_nutrititon_info[nutrient];
+                        }
+                    }
+                }
+
+                return total_nutrition;
+            }
+
+            GREENS = ["Calcium", "Dietary Fiber", "Iron", "Potassium", "Protein",
+                "Vitamin A", "Vitamin B6", "Vitamin B12", "Vitamin C", "Vitamin D",
+                "Vitamin K", "Zinc"
+            ]
+
+            ITEMS_BY_NUTRITION = {
+                "Calcium": [
+                    "Milk",
+                    "Cheese",
+                    "Yogurt",
+                    "Fortified Orange Juice",
+                    "Tofu"
+                ],
+                "Iron": [
+                    "Spinach",
+                    "Lentils",
+                    "Beef",
+                    "Shrimp",
+                    "Kidney Beans"
+                ],
+                "Sodium": [
+                    "Soy Sauce",
+                    "Canned Soup",
+                    "Pickles",
+                    "Olives",
+                    "Processed Meats"
+                ],
+                "Vitamin A": [
+                    "Carrots",
+                    "Sweet Potatoes",
+                    "Kale",
+                    "Spinach",
+                    "Butternut Squash"
+                ],
+                "Vitamin B6": [
+                    "Poultry",
+                    "Fish",
+                    "Chickpeas",
+                    "Potatoes",
+                    "Avocados"
+                ],
+                "Vitamin B12": [
+                    "Poultry",
+                    "Fish",
+                    "Eggs",
+                    "Dairy"
+                ],
+                "Vitamin C": [
+                    "Oranges",
+                    "Strawberries",
+                    "Bell Peppers",
+                    "Broccoli",
+                    "Kiwi"
+                ],
+                "Vitamin D": [
+                    "Salmon",
+                    "Tuna",
+                    "Egg yolks"
+                ],
+                "Vitamin K": [
+                    "Kale",
+                    "Spinach",
+                    "Broccoli"
+                ],
+                "Zinc": [
+                    "Oysters",
+                    "Beef",
+                    "Poultry",
+                    "Dairy"
+                ],
+                "Cholesterol": [
+                    "Egg Yolks",
+                    "Shrimp",
+                    "Liver",
+                    "Butter",
+                    "Cheese"
+                ],
+                "Saturated Fat": [
+                    "Butter",
+                    "Coconut Oil",
+                    "Cheese",
+                    "Cream",
+                    "Red Meat"
+                ],
+                "Protein": [
+                    "Chicken Breast",
+                    "Tofu",
+                    "Greek Yogurt",
+                    "Eggs",
+                    "Salmon"
+                ],
+                "Carbohydrate": [
+                    "Bread",
+                    "Pasta",
+                    "Rice",
+                    "Potatoes",
+                    "Oats"
+                ],
+                "Energy": [
+                    "Peanut Butter",
+                    "Avocado",
+                    "Nuts",
+                    "Granola",
+                    "Bananas"
+                ],
+                "Total Sugars": [
+                    "Fruit Juice",
+                    "Candy",
+                    "Soda",
+                    "Desserts",
+                    "Sweetened Yogurt"
+                ],
+                "Dietary Fiber": [
+                    "Whole Grains",
+                    "Beans",
+                    "Berries",
+                    "Broccoli",
+                    "Nuts"
+                ],
+                "Potassium": [
+                    "Bananas",
+                    "Potatoes",
+                    "Spinach",
+                    "White Beans",
+                    "Avocado"
+                ],
+                "Trans Fat": [
+                    "Margarine",
+                    "Packaged Baked Goods",
+                    "Fried Foods",
+                    "Processed Snacks"
+                ],
+                "Total Fat": [
+                    "Avocado",
+                    "Nuts",
+                    "Olive Oil",
+                    "Salmon",
+                    "Cheese"
+                ]
+            }
+
+
+            BAR_COLORS = ["red", "orange", "yellow", "greenyellow", "green"]
+
+            var render_recommendation = async function(rec_box_num, rec_item) {
+                var rec_box = document.getElementById("rec" + rec_box_num);
+                var rec_header = document.getElementById("rec" + rec_box_num + "_header");
+                var rec_bar = document.getElementById("rec" + rec_box_num + "_bar");
+                var rec_text = document.getElementById("rec" + rec_box_num + "_text");
+
+                rec_header.innerHTML = rec_item[0];
+                rec_bar.style.width = (300*rec_item[1]) + "px";
+                bar_color_selected = Math.round(4*rec_item[1]);
+                rec_bar.style.background_color = BAR_COLORS[bar_color_selected];
+
+                rec_text.innerHTML = "You're currently only consuming " + (100*rec_item[1]).toFixed(0) 
+                    + "% of the recommended daily amount of " + rec_item[0] 
+                    + ". You can improve this by adding foods like ";
+                console.log(rec_item[0]);
+                num_items_to_rec = ITEMS_BY_NUTRITION[rec_item[0]].length;
+                for (var i = 0; i < num_items_to_rec - 1; i++) {
+                    rec_text.innerHTML += ITEMS_BY_NUTRITION[rec_item[0]][i] + ", "
+                }
+                rec_text.innerHTML += ", or " + ITEMS_BY_NUTRITION[rec_item[0]][num_items_to_rec-1]
+                    + " to your regular diet."
+
+                /*
+                <div id="rec3" class="rec_entry">
+                    <h4 class="rec_header" id="rec1_header">FILLER</h4>
+                    <div class="rec_bar_background" id="rec1_bar_background"></div>
+                    <div class="rec_bar" id="rec1_bar"></div>
+                    <p class="rec_text" id="rec1_text">Words Words Words</p>
+                </div>
+                */
+            }
+
+            DAY_WINDOW = 7;
+            var load_summary_and_recs = async function() {
+                summary_box = document.getElementById("summary");
+
+                total_nutrition = await get_total_selected_nutrition();
+
+                var trip_entry_nutrition = document.getElementById("nutrition_info_content");
+                trip_entry_nutrition.innerHTML = "";
+                for (nutrient in total_nutrition) {
+                    trip_entry_nutrition.innerHTML += nutrient + ": " 
+                        + ((total_nutrition[nutrient]) / (100*DAY_WINDOW)).toFixed(2)
+                        + " DV per day<br>";
+                }
+
+                recommendations_arr = [];
+                for (var i = 0; i < GREENS.length; i++) {
+                    this_nutrient = GREENS[i];
+                    this_nutrient_val = (total_nutrition[this_nutrient]) / (100*DAY_WINDOW)
+                    recommendations_arr.push([this_nutrient, this_nutrient_val]);
+                }
+                recommendations_arr.sort((a, b) => a[1] - b[1]);
+
+
+                await render_recommendation("1", recommendations_arr[0]);
+                await render_recommendation("2", recommendations_arr[1]);
+                await render_recommendation("3", recommendations_arr[2]);
+            }
+
+            var update_selected_load_summary = async function(days) {
+                DAY_WINDOW = days;
+                
+                for (var i = 0; i < TRIP_TIMESTAMPS.length; i++) {
+                    this_timestamp = TRIP_TIMESTAMPS[i];
+                    selection_button = document.getElementById(this_timestamp);
+                    if (selection_button.classList.contains("selected")) {
+                        selection_button.classList.remove("selected");
+                    }
+                    if (selection_button.classList.contains("deselected")) {
+                        selection_button.classList.remove("deselected");
+                    }
+
+                    var now = new Date();
+                    var seconds_now = (now.getTime()) / 1000;
+                    var seconds_since_trip = seconds_now - this_timestamp;
+                    var days_since_trip = seconds_since_trip / 86400;
+
+                    if (days_since_trip < DAY_WINDOW) {
+                        selected = selection_button.classList.add("selected");
+                    }
+                    else {
+                        selection_button.classList.add("deselected");
+                    }
+                }
+                await load_summary_and_recs();
+            }
+
             
             load_full_history();
 
