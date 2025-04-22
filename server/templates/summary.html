@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='summary_style.css') }}">
+        <meta charset="utf-8">
+        <title></title>
+
+
+    </head>
+    <body>
+    {% if current_user.is_authenticated %}
+        <div id="nav_header">
+            <div id="nav_site_name" class="nav_page_text">Grocery Finder App</div>
+            <div id="nav_flex_box">
+                <a id="nav_grocery_finder" class="nav_page_text" href="/">Grocery Finder</a>
+                <a id="nav_history" class="nav_page_text" href="/history">History</a>
+                <div id="nav_summary_goals" class="nav_page_text nav_selected_text">Summary/Goals</div>
+                <div id="nav_logout_button" class="click_button">
+                    <a href="{{ url_for('auth.logout') }}">
+                        <div id="nav_logout_text" class="click_button_text">Log Out</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="description_flex_box">
+            <div id="description_header">Summary and Goals</div>
+            <div id="description_text">
+                A summary of your grocery trip history and any health goals the site suggests for you.
+            </div>
+        </div>
+
+        <div id="trip_list"></div>
+
+        <script>
+            NUTRITITON_COMPONENTS = [
+                "Added Sugar",
+                "Calcium",
+                "Cholesterol",
+                "Dietary Fiber",
+                "Total Fat",
+                "Iodine",
+                "Iron",
+                "Potassium",
+                "Protein",
+                "Saturated Fat",
+                "Sodium",
+                "Carbohydrate",
+                "Vitamin A",
+                "Vitamin B6",
+                "Vitamin B12",
+                "Vitamin C",
+                "Vitamin D",
+                "Vitamin K",
+                "Zinc",
+            ]
+
+            /////////////// CODE FOR PARSING GROCERY HISTORY ///////////////
+            var get_trip_nutrititon_info = async function(trip_data) {
+                trip_nutrition = {}
+                for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
+                    var nutrient = NUTRITITON_COMPONENTS[i];
+                    trip_nutrition[nutrient] = 0;
+                }
+
+                for (var i = 0; i < trip_data['groceries'].length; i++) {
+                //for (item in trip_data['groceries']) {
+                    nutrititon_info = trip_data['groceries'][i]['nutrients'];
+                    counter = trip_data['groceries'][i]['count'];
+                    for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
+                        var nutrient = NUTRITITON_COMPONENTS[i];
+                        if (nutrient in nutrititon_info) {
+                            trip_nutrition[nutrient] += counter*nutrititon_info[nutrient]['value'];
+                        }
+                    }
+                }
+
+                return trip_nutrition;
+            }
+
+            /////////////// CODE FOR LOADING GROCERY HISTORY ///////////////
+            GROCERY_TRIP_LIST = []
+
+            async function fetch_data() {
+                try {
+                    const response = await fetch('/static/user_grocery_list_log.json');
+                    const data = await response.json();
+                    // Process the data
+                    console.log('Data fetched:', data);
+                    return data;
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    throw error;
+                }
+            }
+            
+            var load_full_history = async function() {
+                const populatedData = await fetch_data();
+                GROCERY_TRIP_LIST = populatedData;
+                for (var i = GROCERY_TRIP_LIST.length - 1; i >= 0; i--) {
+                    create_trip_entry(GROCERY_TRIP_LIST[i]);
+                }
+            }
+            
+            load_full_history();
+
+        </script>
+    {% endif %}
+    </body>
+</html>

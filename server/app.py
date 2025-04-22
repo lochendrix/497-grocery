@@ -139,6 +139,12 @@ def create_app():
             return redirect(url_for('auth.login'))
         return render_template('history.html')
 
+    @app.route('/summary')
+    def summary():
+        if not current_user.is_authenticated:
+            return redirect(url_for('auth.login'))
+        return render_template('summary.html')
+
     return app
 
 if __name__ == '__main__':
