@@ -1,5 +1,6 @@
 import re
 import logging
+import math
 from utility import *
 from functools import cmp_to_key
 
@@ -41,7 +42,7 @@ class Grocery_List:
         for i in range(len(self.list)):
             # What to multiply by
             serving = self.list[i]['serving_size']
-            logging.debug(self.list[i])
+            #logging.debug(self.list[i])
             if isinstance(serving, (int, float)):
                 numeric_serving = serving
             else:
@@ -84,20 +85,43 @@ class Grocery_List:
         #for i in range(len(self.list)):
         #    self.list[i]['health_score'] -= min_score # Sets min to 0
         for i in range(len(self.list)):
-            self.list[i]['health_score'] /= max_score # Scales to [0, 1]
+            self.list[i]['health_score'] = math.sqrt(self.list[i]['health_score'] / max_score) # Scales to [0, 1]
 
     # Insert a cost (health adjusted) score for each grocery
     # NOTE: ONLY CALL AFTER health_score_groceries
     def cost_score_groceries(self):
-        for i in range(len(self.list)):
+    # 1) First pass: compute raw cost scores and track min/max
+        min_score = float('inf')
+        max_score = float('-inf')
+
+        for item in self.list:
             # number of 100g servings
-            multiplier = self.list[i]['Unit Size'] / 100
-            score = multiplier * self.list[i]['health_score']
+            multiplier = item['Unit Size'] / 100
 
-            # Cost divider
-            score /= self.list[i]['Unit Price']
+            # base score = (servings × health_score) ÷ unit price
+            raw = multiplier * item['health_score']
+            raw /= item['Unit Price']
 
-            self.list[i]['cost_score'] = score
+            # stash it temporarily
+            item['_raw_cost_score'] = raw
+
+            # track bounds
+            if raw < min_score:
+                min_score = raw
+            if raw > max_score:
+                max_score = raw
+
+        # 2) Second pass: normalize into [0,1]
+        #    (if you’d rather floor at zero, you could subtract min_score first)
+        for item in self.list:
+            if max_score > 0:
+                item['cost_score'] = math.sqrt(item['_raw_cost_score'] / max_score)
+                logging.debug("COST SCORE")
+                logging.debug(item['cost_score'])
+            else:
+                item['cost_score'] = 0.0
+            # clean up
+            del item['_raw_cost_score']
 
     # Highest score goes first
     def order_groceries_by_score(self):

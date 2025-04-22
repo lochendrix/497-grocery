@@ -1,0 +1,2151 @@
+[
+  {
+    "groceries": [],
+    "timestamp": 1745326181.9706008
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Kroger\u00ae Original Nice'N Cheesy\u00ae Pasteurized Prepared Cheese Product",
+        "Unit Price": 5.99,
+        "Unit Size": 907.184,
+        "Unit Size units": "g",
+        "Category": "Dairy",
+        "upcID": "0001111001731",
+        "image_url": "https://www.kroger.com/product/images/xlarge/back/0001111001731",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 201.125,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 184.77564102564102,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 20.113636363636363,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 1918.75,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 39,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 661.0576923076923,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 32.986111111111114,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 39.22872340425532,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 347.55434782608694,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 162.5,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 404.09374999999994,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 1.5144974958263773,
+        "highlights": [
+          [
+            "Calcium",
+            661.0576923076923
+          ],
+          [
+            "Protein",
+            201.125
+          ],
+          [
+            "Potassium",
+            39.22872340425532
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Meyenberg Fresh Whole Goat Milk, Quart, Certified Humane, Kosher, Gluten Free, Easy to Digest",
+        "Unit Price": 6.49,
+        "Unit Size": 32,
+        "Unit Size units": "g",
+        "Category": "Dairy",
+        "upcID": "0007290400003",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0007290400003",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {},
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0,
+        "cost_score": 0,
+        "highlights": [],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745326615.100349
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Kroger\u00ae Original Nice'N Cheesy\u00ae Pasteurized Prepared Cheese Product",
+        "Unit Price": 5.99,
+        "Unit Size": 907.184,
+        "Unit Size units": "g",
+        "Category": "Dairy",
+        "upcID": "0001111001731",
+        "image_url": "https://www.kroger.com/product/images/xlarge/back/0001111001731",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 201.125,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 184.77564102564102,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 20.113636363636363,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 1918.75,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 39,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 661.0576923076923,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 32.986111111111114,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 39.22872340425532,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 347.55434782608694,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 162.5,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 404.09374999999994,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 1.5144974958263773,
+        "highlights": [
+          [
+            "Calcium",
+            661.0576923076923
+          ],
+          [
+            "Protein",
+            201.125
+          ],
+          [
+            "Potassium",
+            39.22872340425532
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Meyenberg Fresh Whole Goat Milk, Quart, Certified Humane, Kosher, Gluten Free, Easy to Digest",
+        "Unit Price": 6.49,
+        "Unit Size": 32,
+        "Unit Size units": "g",
+        "Category": "Dairy",
+        "upcID": "0007290400003",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0007290400003",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {},
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0,
+        "cost_score": 0,
+        "highlights": [],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745326623.071349
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Simple Truth Organic\u00ae Spaghetti",
+        "Unit Price": 1.69,
+        "Unit Size": 453.592,
+        "Unit Size units": "g",
+        "Category": "Pasta, Sauces, Grain",
+        "upcID": "0001111085846",
+        "image_url": "https://www.kroger.com/product/images/xlarge/back/0001111085846",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 44.642857142857146,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 4.0979853479853485,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 47.532467532467535,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 637.5,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 6.375,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 22.95918367346939,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Vitamin A": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Trans Fat": {
+            "value": 0,
+            "units": "G"
+          },
+          "Saturated Fat": {
+            "value": 0,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 2.6839763313609466,
+        "highlights": [
+          [
+            "Protein",
+            44.642857142857146
+          ],
+          [
+            "Dietary Fiber",
+            22.95918367346939
+          ]
+        ],
+        "count": 2
+      },
+      {
+        "Name": "Oui by Yoplait Cinnamon & Apple Whole Milk Yogurt",
+        "Unit Price": 1.79,
+        "Unit Size": 141.7475,
+        "Unit Size units": "g",
+        "Category": "Dairy",
+        "upcID": "0007047021999",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0007047021999",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 12.293333333333333,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.1367521367521363,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 4.853333333333333,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 99.33333333333333,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 7.16,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 3.5714285714285716,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 4.564102564102564,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 2.4444444444444446,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 2.283687943262411,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 1.681159420289855,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 1.3333333333333333,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.7933333333333334,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.37213368935003616,
+        "cost_score": 0.29468726330248185,
+        "highlights": [
+          [
+            "Protein",
+            12.293333333333333
+          ],
+          [
+            "Calcium",
+            4.564102564102564
+          ],
+          [
+            "Dietary Fiber",
+            3.5714285714285716
+          ]
+        ],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745349569
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Kroger\u00ae Dark Red Kidney Beans",
+        "Unit Price": 0.89,
+        "Unit Size": 439.41724999999997,
+        "Unit Size units": "g",
+        "Category": "Canned & Packaged",
+        "upcID": "0001111010642",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0001111010642",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 8.046153846153848,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.3431952662721893,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.5636363636363635,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 66.53846153846155,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.13846153846153847,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 8.104395604395606,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0.7100591715976332,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 5.5982905982906,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 3.0032733224222588,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 4.59866220735786,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0.3846153846153847,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 1.4102564102564104,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.1173076923076923,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6189172951060352,
+        "cost_score": 3.0557633235160946,
+        "highlights": [
+          [
+            "Dietary Fiber",
+            8.104395604395606
+          ],
+          [
+            "Protein",
+            8.046153846153848
+          ],
+          [
+            "Iron",
+            5.5982905982906
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
+        "Unit Price": 9.99,
+        "Unit Size": 20,
+        "Unit Size units": "g",
+        "Category": "Meat & Seafood",
+        "upcID": "0001111096564",
+        "image_url": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 10.592,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 0.6256410256410256,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.1520000000000001,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 39.6,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 1.184,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 0.5714285714285715,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 1.784615384615385,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 0.9111111111111112,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 1.565957446808511,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 8.730434782608695,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 1.2888888888888888,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 15.866666666666667,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 0.49399999999999994,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.40022708305876403,
+        "cost_score": 0.008012554215390672,
+        "highlights": [
+          [
+            "Protein",
+            10.592
+          ],
+          [
+            "Calcium",
+            1.784615384615385
+          ],
+          [
+            "Potassium",
+            1.565957446808511
+          ]
+        ],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745350413
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Kroger\u00ae Dark Red Kidney Beans",
+        "Unit Price": 0.89,
+        "Unit Size": 439.41724999999997,
+        "Unit Size units": "g",
+        "Category": "Canned & Packaged",
+        "upcID": "0001111010642",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0001111010642",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 8.046153846153848,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.3431952662721893,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.5636363636363635,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 66.53846153846155,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.13846153846153847,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 8.104395604395606,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0.7100591715976332,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 5.5982905982906,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 3.0032733224222588,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 4.59866220735786,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0.3846153846153847,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 1.4102564102564104,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.1173076923076923,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6189172951060352,
+        "cost_score": 3.0557633235160946,
+        "highlights": [
+          [
+            "Dietary Fiber",
+            8.104395604395606
+          ],
+          [
+            "Protein",
+            8.046153846153848
+          ],
+          [
+            "Iron",
+            5.5982905982906
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
+        "Unit Price": 9.99,
+        "Unit Size": 20,
+        "Unit Size units": "g",
+        "Category": "Meat & Seafood",
+        "upcID": "0001111096564",
+        "image_url": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 10.592,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 0.6256410256410256,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.1520000000000001,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 39.6,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 1.184,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 0.5714285714285715,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 1.784615384615385,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 0.9111111111111112,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 1.565957446808511,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 8.730434782608695,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 1.2888888888888888,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 15.866666666666667,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 0.49399999999999994,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.40022708305876403,
+        "cost_score": 0.008012554215390672,
+        "highlights": [
+          [
+            "Protein",
+            10.592
+          ],
+          [
+            "Calcium",
+            1.784615384615385
+          ],
+          [
+            "Potassium",
+            1.565957446808511
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Roots Farm Fresh Organic Straight Cut Sweet Potato Fries",
+        "Unit Price": 9.99,
+        "Unit Size": 425.2425,
+        "Unit Size units": "g",
+        "Category": "Frozen",
+        "upcID": "0084005510102",
+        "image_url": "https://www.kroger.com/product/images/xlarge/back/0084005510102",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 4.966666666666667,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 20.128205128205128,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 9.90909090909091,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 260,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 9.533333333333333,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 16.666666666666668,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 2.6923076923076925,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.611111111111111,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 16.27659574468085,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 10.144927536231885,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 22.037037037037038,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 10.233333333333334,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 0.4256681681681681,
+        "highlights": [
+          [
+            "Vitamin C",
+            22.037037037037038
+          ],
+          [
+            "Dietary Fiber",
+            16.666666666666668
+          ],
+          [
+            "Potassium",
+            16.27659574468085
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
+        "Unit Price": 2.99,
+        "Unit Size": 306.1746,
+        "Unit Size units": "g",
+        "Category": "Frozen",
+        "upcID": "0001450002427",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 4.78,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 7.8076923076923075,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.2218181818181817,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 90,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.76,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 4.285714285714286,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 4.461538461538462,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 4.222222222222222,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.23404255319149,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 19.565217391304348,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 16.77777777777778,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 5.333333333333333,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 16.479999999999997,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6303555119240002,
+        "cost_score": 0.6454810927127959,
+        "highlights": [
+          [
+            "Vitamin C",
+            16.77777777777778
+          ],
+          [
+            "Potassium",
+            7.23404255319149
+          ],
+          [
+            "Protein",
+            4.78
+          ]
+        ],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745350912
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Kroger\u00ae Dark Red Kidney Beans",
+        "Unit Price": 0.89,
+        "Unit Size": 439.41724999999997,
+        "Unit Size units": "g",
+        "Category": "Canned & Packaged",
+        "upcID": "0001111010642",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0001111010642",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 8.046153846153848,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.3431952662721893,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.5636363636363635,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 66.53846153846155,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.13846153846153847,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 8.104395604395606,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0.7100591715976332,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 5.5982905982906,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 3.0032733224222588,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 4.59866220735786,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0.3846153846153847,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 1.4102564102564104,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.1173076923076923,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6189172951060352,
+        "cost_score": 3.0557633235160946,
+        "highlights": [
+          [
+            "Dietary Fiber",
+            8.104395604395606
+          ],
+          [
+            "Protein",
+            8.046153846153848
+          ],
+          [
+            "Iron",
+            5.5982905982906
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
+        "Unit Price": 9.99,
+        "Unit Size": 20,
+        "Unit Size units": "g",
+        "Category": "Meat & Seafood",
+        "upcID": "0001111096564",
+        "image_url": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 10.592,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 0.6256410256410256,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.1520000000000001,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 39.6,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 1.184,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 0.5714285714285715,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 1.784615384615385,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 0.9111111111111112,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 1.565957446808511,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 8.730434782608695,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 1.2888888888888888,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 15.866666666666667,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 0.49399999999999994,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.40022708305876403,
+        "cost_score": 0.008012554215390672,
+        "highlights": [
+          [
+            "Protein",
+            10.592
+          ],
+          [
+            "Calcium",
+            1.784615384615385
+          ],
+          [
+            "Potassium",
+            1.565957446808511
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Roots Farm Fresh Organic Straight Cut Sweet Potato Fries",
+        "Unit Price": 9.99,
+        "Unit Size": 425.2425,
+        "Unit Size units": "g",
+        "Category": "Frozen",
+        "upcID": "0084005510102",
+        "image_url": "https://www.kroger.com/product/images/xlarge/back/0084005510102",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 4.966666666666667,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 20.128205128205128,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 9.90909090909091,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 260,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 9.533333333333333,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 16.666666666666668,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 2.6923076923076925,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.611111111111111,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 16.27659574468085,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 10.144927536231885,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 22.037037037037038,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 10.233333333333334,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 0.4256681681681681,
+        "highlights": [
+          [
+            "Vitamin C",
+            22.037037037037038
+          ],
+          [
+            "Dietary Fiber",
+            16.666666666666668
+          ],
+          [
+            "Potassium",
+            16.27659574468085
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
+        "Unit Price": 2.99,
+        "Unit Size": 306.1746,
+        "Unit Size units": "g",
+        "Category": "Frozen",
+        "upcID": "0001450002427",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 4.78,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 7.8076923076923075,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.2218181818181817,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 90,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.76,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 4.285714285714286,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 4.461538461538462,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 4.222222222222222,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.23404255319149,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 19.565217391304348,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 16.77777777777778,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 5.333333333333333,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 16.479999999999997,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6303555119240002,
+        "cost_score": 0.6454810927127959,
+        "highlights": [
+          [
+            "Vitamin C",
+            16.77777777777778
+          ],
+          [
+            "Potassium",
+            7.23404255319149
+          ],
+          [
+            "Protein",
+            4.78
+          ]
+        ],
+        "count": 2
+      },
+      {
+        "Name": "Tasty Bite Organic Madras Lentils 10oz Savory lentil curry",
+        "Unit Price": 4.19,
+        "Unit Size": 283.495,
+        "Unit Size units": "g",
+        "Category": "Natural & Organic",
+        "upcID": "0078273300002",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0078273300002",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 3.066666666666667,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.0181623931623935,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.8681818181818182,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 46.25,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 1.3375000000000001,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 5.05952380952381,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0.8012820512820513,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.2870370370370368,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 2.5886524822695036,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 6.938405797101449,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 3.5648148148148153,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.6833333333333336,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.4398325466068217,
+        "cost_score": 0.29759028114630287,
+        "highlights": [
+          [
+            "Dietary Fiber",
+            5.05952380952381
+          ],
+          [
+            "Vitamin C",
+            3.5648148148148153
+          ],
+          [
+            "Iron",
+            3.2870370370370368
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Butternut Squash",
+        "Unit Price": 1.29,
+        "Unit Size": 453.592,
+        "Unit Size units": "g",
+        "Category": "Produce",
+        "upcID": "0000000004759",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0000000004759",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Dietary Fiber": {
+            "value": 7.142857142857143,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 4.254545454545455,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 45,
+            "units": "KCAL"
+          },
+          "Vitamin A": {
+            "value": 392.5925925925926,
+            "units": "%DV"
+          },
+          "Trans Fat": {
+            "value": 0,
+            "units": "G"
+          },
+          "Calcium": {
+            "value": 3.6923076923076925,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.48936170212766,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 0.1282051282051282,
+            "units": "%DV"
+          },
+          "Protein": {
+            "value": 2,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.888888888888889,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 0.17391304347826086,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 0.10500000000000001,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 23.333333333333332,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Total Sugars": {
+            "value": 2.2,
+            "units": "G"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 1,
+        "highlights": [
+          [
+            "Vitamin A",
+            392.5925925925926
+          ],
+          [
+            "Vitamin C",
+            23.333333333333332
+          ],
+          [
+            "Potassium",
+            7.48936170212766
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Kale Bag",
+        "Unit Price": 2.99,
+        "Unit Size": 453.592,
+        "Unit Size units": "g",
+        "Category": "International",
+        "upcID": "0001111018170",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0001111018170",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Trans Fat": {
+            "value": 0,
+            "units": "G"
+          },
+          "Saturated Fat": {
+            "value": 0.89,
+            "units": "%DV"
+          },
+          "Protein": {
+            "value": 5.84,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 103.77777777777777,
+            "units": "%DV"
+          },
+          "Dietary Fiber": {
+            "value": 14.64285714285714,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 8.88888888888889,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 2.3043478260869565,
+            "units": "%DV"
+          },
+          "Vitamin A": {
+            "value": 178.14814814814815,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 1.9102564102564104,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.6072727272727272,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 35,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.99,
+            "units": "G"
+          },
+          "Calcium": {
+            "value": 19.53846153846154,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.404255319148936,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.7684847888766511,
+        "cost_score": 0.33155363801032767,
+        "highlights": [
+          [
+            "Vitamin A",
+            178.14814814814815
+          ],
+          [
+            "Vitamin C",
+            103.77777777777777
+          ],
+          [
+            "Calcium",
+            19.53846153846154
+          ]
+        ],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745354133
+  },
+  {
+    "groceries": [
+      {
+        "Name": "Kroger\u00ae Dark Red Kidney Beans",
+        "Unit Price": 0.89,
+        "Unit Size": 439.41724999999997,
+        "Unit Size units": "g",
+        "Category": "Canned & Packaged",
+        "upcID": "0001111010642",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0001111010642",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 8.046153846153848,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.3431952662721893,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.5636363636363635,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 66.53846153846155,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.13846153846153847,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 8.104395604395606,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0.7100591715976332,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 5.5982905982906,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 3.0032733224222588,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 4.59866220735786,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 0.3846153846153847,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 1.4102564102564104,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.1173076923076923,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6189172951060352,
+        "cost_score": 3.0557633235160946,
+        "highlights": [
+          [
+            "Dietary Fiber",
+            8.104395604395606
+          ],
+          [
+            "Protein",
+            8.046153846153848
+          ],
+          [
+            "Iron",
+            5.5982905982906
+          ]
+        ],
+        "count": 2
+      },
+      {
+        "Name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
+        "Unit Price": 9.99,
+        "Unit Size": 20,
+        "Unit Size units": "g",
+        "Category": "Meat & Seafood",
+        "upcID": "0001111096564",
+        "image_url": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 10.592,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 0.6256410256410256,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.1520000000000001,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 39.6,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 1.184,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 0.5714285714285715,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 1.784615384615385,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 0.9111111111111112,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 1.565957446808511,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 8.730434782608695,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 1.2888888888888888,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 15.866666666666667,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 0.49399999999999994,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.40022708305876403,
+        "cost_score": 0.008012554215390672,
+        "highlights": [
+          [
+            "Protein",
+            10.592
+          ],
+          [
+            "Calcium",
+            1.784615384615385
+          ],
+          [
+            "Potassium",
+            1.565957446808511
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Roots Farm Fresh Organic Straight Cut Sweet Potato Fries",
+        "Unit Price": 9.99,
+        "Unit Size": 425.2425,
+        "Unit Size units": "g",
+        "Category": "Frozen",
+        "upcID": "0084005510102",
+        "image_url": "https://www.kroger.com/product/images/xlarge/back/0084005510102",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 4.966666666666667,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 20.128205128205128,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 9.90909090909091,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 260,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 9.533333333333333,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 16.666666666666668,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 2.6923076923076925,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.611111111111111,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 16.27659574468085,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 10.144927536231885,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 22.037037037037038,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 10.233333333333334,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 0.4256681681681681,
+        "highlights": [
+          [
+            "Vitamin C",
+            22.037037037037038
+          ],
+          [
+            "Dietary Fiber",
+            16.666666666666668
+          ],
+          [
+            "Potassium",
+            16.27659574468085
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
+        "Unit Price": 2.99,
+        "Unit Size": 306.1746,
+        "Unit Size units": "g",
+        "Category": "Frozen",
+        "upcID": "0001450002427",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 4.78,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 7.8076923076923075,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 2.2218181818181817,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 90,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.76,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 4.285714285714286,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 4.461538461538462,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 4.222222222222222,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.23404255319149,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 19.565217391304348,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 16.77777777777778,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 5.333333333333333,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 16.479999999999997,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.6303555119240002,
+        "cost_score": 0.6454810927127959,
+        "highlights": [
+          [
+            "Vitamin C",
+            16.77777777777778
+          ],
+          [
+            "Potassium",
+            7.23404255319149
+          ],
+          [
+            "Protein",
+            4.78
+          ]
+        ],
+        "count": 3
+      },
+      {
+        "Name": "Tasty Bite Organic Madras Lentils 10oz Savory lentil curry",
+        "Unit Price": 4.19,
+        "Unit Size": 283.495,
+        "Unit Size units": "g",
+        "Category": "Natural & Organic",
+        "upcID": "0078273300002",
+        "image_url": "https://www.kroger.com/product/images/xlarge/right/0078273300002",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Protein": {
+            "value": 3.066666666666667,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 3.0181623931623935,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.8681818181818182,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 46.25,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 1.3375000000000001,
+            "units": "G"
+          },
+          "Dietary Fiber": {
+            "value": 5.05952380952381,
+            "units": "%DV"
+          },
+          "Calcium": {
+            "value": 0.8012820512820513,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.2870370370370368,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 2.5886524822695036,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 6.938405797101449,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 3.5648148148148153,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 2.6833333333333336,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.4398325466068217,
+        "cost_score": 0.29759028114630287,
+        "highlights": [
+          [
+            "Dietary Fiber",
+            5.05952380952381
+          ],
+          [
+            "Vitamin C",
+            3.5648148148148153
+          ],
+          [
+            "Iron",
+            3.2870370370370368
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Butternut Squash",
+        "Unit Price": 1.29,
+        "Unit Size": 453.592,
+        "Unit Size units": "g",
+        "Category": "Produce",
+        "upcID": "0000000004759",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0000000004759",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Dietary Fiber": {
+            "value": 7.142857142857143,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 4.254545454545455,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 45,
+            "units": "KCAL"
+          },
+          "Vitamin A": {
+            "value": 392.5925925925926,
+            "units": "%DV"
+          },
+          "Trans Fat": {
+            "value": 0,
+            "units": "G"
+          },
+          "Calcium": {
+            "value": 3.6923076923076925,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.48936170212766,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 0.1282051282051282,
+            "units": "%DV"
+          },
+          "Protein": {
+            "value": 2,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 3.888888888888889,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 0.17391304347826086,
+            "units": "%DV"
+          },
+          "Saturated Fat": {
+            "value": 0.10500000000000001,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 23.333333333333332,
+            "units": "%DV"
+          },
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Total Sugars": {
+            "value": 2.2,
+            "units": "G"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 1,
+        "cost_score": 1,
+        "highlights": [
+          [
+            "Vitamin A",
+            392.5925925925926
+          ],
+          [
+            "Vitamin C",
+            23.333333333333332
+          ],
+          [
+            "Potassium",
+            7.48936170212766
+          ]
+        ],
+        "count": 1
+      },
+      {
+        "Name": "Kale Bag",
+        "Unit Price": 2.99,
+        "Unit Size": 453.592,
+        "Unit Size units": "g",
+        "Category": "International",
+        "upcID": "0001111018170",
+        "image_url": "https://www.kroger.com/product/images/xlarge/front/0001111018170",
+        "store": "Kroger",
+        "serving_size": 100,
+        "serving_size_unit": "g",
+        "nutrients": {
+          "Cholesterol": {
+            "value": 0,
+            "units": "%DV"
+          },
+          "Trans Fat": {
+            "value": 0,
+            "units": "G"
+          },
+          "Saturated Fat": {
+            "value": 0.89,
+            "units": "%DV"
+          },
+          "Protein": {
+            "value": 5.84,
+            "units": "%DV"
+          },
+          "Vitamin C": {
+            "value": 103.77777777777777,
+            "units": "%DV"
+          },
+          "Dietary Fiber": {
+            "value": 14.64285714285714,
+            "units": "%DV"
+          },
+          "Iron": {
+            "value": 8.88888888888889,
+            "units": "%DV"
+          },
+          "Sodium": {
+            "value": 2.3043478260869565,
+            "units": "%DV"
+          },
+          "Vitamin A": {
+            "value": 178.14814814814815,
+            "units": "%DV"
+          },
+          "Total Fat": {
+            "value": 1.9102564102564104,
+            "units": "%DV"
+          },
+          "Carbohydrate": {
+            "value": 1.6072727272727272,
+            "units": "%DV"
+          },
+          "Energy": {
+            "value": 35,
+            "units": "KCAL"
+          },
+          "Total Sugars": {
+            "value": 0.99,
+            "units": "G"
+          },
+          "Calcium": {
+            "value": 19.53846153846154,
+            "units": "%DV"
+          },
+          "Potassium": {
+            "value": 7.404255319148936,
+            "units": "%DV"
+          }
+        },
+        "Street": "2641 Plymouth Rd",
+        "City": "Ann Arbor",
+        "health_score": 0.7684847888766511,
+        "cost_score": 0.33155363801032767,
+        "highlights": [
+          [
+            "Vitamin A",
+            178.14814814814815
+          ],
+          [
+            "Vitamin C",
+            103.77777777777777
+          ],
+          [
+            "Calcium",
+            19.53846153846154
+          ]
+        ],
+        "count": 1
+      }
+    ],
+    "timestamp": 1745357752
+  }
+]

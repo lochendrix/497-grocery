@@ -1,0 +1,333 @@
+[
+    [
+        {
+            "Name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
+            "Unit Price": 2.99,
+            "Unit Size": 306.1746,
+            "Unit Size units": "g",
+            "Category": "Frozen",
+            "upcID": "0001450002427",
+            "image_url": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
+            "store": "Kroger",
+            "serving_size": 100.0,
+            "serving_size_unit": "g",
+            "nutrients": {
+                "Protein": {
+                    "value": 4.78,
+                    "units": "%DV"
+                },
+                "Total Fat": {
+                    "value": 7.8076923076923075,
+                    "units": "%DV"
+                },
+                "Carbohydrate": {
+                    "value": 2.2218181818181817,
+                    "units": "%DV"
+                },
+                "Energy": {
+                    "value": 90.0,
+                    "units": "KCAL"
+                },
+                "Total Sugars": {
+                    "value": 0.76,
+                    "units": "G"
+                },
+                "Dietary Fiber": {
+                    "value": 4.285714285714286,
+                    "units": "%DV"
+                },
+                "Calcium": {
+                    "value": 4.461538461538462,
+                    "units": "%DV"
+                },
+                "Iron": {
+                    "value": 4.222222222222222,
+                    "units": "%DV"
+                },
+                "Potassium": {
+                    "value": 7.23404255319149,
+                    "units": "%DV"
+                },
+                "Sodium": {
+                    "value": 19.565217391304348,
+                    "units": "%DV"
+                },
+                "Vitamin C": {
+                    "value": 16.77777777777778,
+                    "units": "%DV"
+                },
+                "Cholesterol": {
+                    "value": 5.333333333333333,
+                    "units": "%DV"
+                },
+                "Saturated Fat": {
+                    "value": 16.479999999999997,
+                    "units": "%DV"
+                }
+            },
+            "Street": "2641 Plymouth Rd",
+            "City": "Ann Arbor",
+            "health_score": 1.0,
+            "cost_score": 1.0,
+            "highlights": [
+                [
+                    "Vitamin C",
+                    16.77777777777778
+                ],
+                [
+                    "Potassium",
+                    7.23404255319149
+                ],
+                [
+                    "Protein",
+                    4.78
+                ]
+            ]
+        },
+        {
+            "Name": "Tasty Bite Organic Madras Lentils 10oz Savory lentil curry",
+            "Unit Price": 4.19,
+            "Unit Size": 283.495,
+            "Unit Size units": "g",
+            "Category": "Natural & Organic",
+            "upcID": "0078273300002",
+            "image_url": "https://www.kroger.com/product/images/xlarge/right/0078273300002",
+            "store": "Kroger",
+            "serving_size": 100.0,
+            "serving_size_unit": "g",
+            "nutrients": {
+                "Protein": {
+                    "value": 3.066666666666667,
+                    "units": "%DV"
+                },
+                "Total Fat": {
+                    "value": 3.0181623931623935,
+                    "units": "%DV"
+                },
+                "Carbohydrate": {
+                    "value": 1.8681818181818182,
+                    "units": "%DV"
+                },
+                "Energy": {
+                    "value": 46.25,
+                    "units": "KCAL"
+                },
+                "Total Sugars": {
+                    "value": 1.3375000000000001,
+                    "units": "G"
+                },
+                "Dietary Fiber": {
+                    "value": 5.05952380952381,
+                    "units": "%DV"
+                },
+                "Calcium": {
+                    "value": 0.8012820512820513,
+                    "units": "%DV"
+                },
+                "Iron": {
+                    "value": 3.2870370370370368,
+                    "units": "%DV"
+                },
+                "Potassium": {
+                    "value": 2.5886524822695036,
+                    "units": "%DV"
+                },
+                "Sodium": {
+                    "value": 6.938405797101449,
+                    "units": "%DV"
+                },
+                "Vitamin C": {
+                    "value": 3.5648148148148153,
+                    "units": "%DV"
+                },
+                "Cholesterol": {
+                    "value": 0.0,
+                    "units": "%DV"
+                },
+                "Saturated Fat": {
+                    "value": 2.6833333333333336,
+                    "units": "%DV"
+                }
+            },
+            "Street": "2641 Plymouth Rd",
+            "City": "Ann Arbor",
+            "health_score": 0.6631987233151325,
+            "cost_score": 0.661970362335031,
+            "highlights": [
+                [
+                    "Dietary Fiber",
+                    5.05952380952381
+                ],
+                [
+                    "Vitamin C",
+                    3.5648148148148153
+                ],
+                [
+                    "Iron",
+                    3.2870370370370368
+                ]
+            ]
+        },
+        {
+            "Name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
+            "Unit Price": 9.99,
+            "Unit Size": 20.0,
+            "Unit Size units": "g",
+            "Category": "Meat & Seafood",
+            "upcID": "0001111096564",
+            "image_url": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+            "store": "Kroger",
+            "serving_size": 100.0,
+            "serving_size_unit": "g",
+            "nutrients": {
+                "Protein": {
+                    "value": 10.592,
+                    "units": "%DV"
+                },
+                "Total Fat": {
+                    "value": 0.6256410256410256,
+                    "units": "%DV"
+                },
+                "Carbohydrate": {
+                    "value": 1.1520000000000001,
+                    "units": "%DV"
+                },
+                "Energy": {
+                    "value": 39.6,
+                    "units": "KCAL"
+                },
+                "Total Sugars": {
+                    "value": 1.184,
+                    "units": "G"
+                },
+                "Dietary Fiber": {
+                    "value": 0.5714285714285715,
+                    "units": "%DV"
+                },
+                "Calcium": {
+                    "value": 1.784615384615385,
+                    "units": "%DV"
+                },
+                "Iron": {
+                    "value": 0.9111111111111112,
+                    "units": "%DV"
+                },
+                "Potassium": {
+                    "value": 1.565957446808511,
+                    "units": "%DV"
+                },
+                "Sodium": {
+                    "value": 8.730434782608695,
+                    "units": "%DV"
+                },
+                "Vitamin C": {
+                    "value": 1.2888888888888888,
+                    "units": "%DV"
+                },
+                "Cholesterol": {
+                    "value": 15.866666666666667,
+                    "units": "%DV"
+                },
+                "Saturated Fat": {
+                    "value": 0.49399999999999994,
+                    "units": "%DV"
+                }
+            },
+            "Street": "2641 Plymouth Rd",
+            "City": "Ann Arbor",
+            "health_score": 0.6326350314824212,
+            "cost_score": 0.1112141089783931,
+            "highlights": [
+                [
+                    "Protein",
+                    10.592
+                ],
+                [
+                    "Calcium",
+                    1.784615384615385
+                ],
+                [
+                    "Potassium",
+                    1.565957446808511
+                ]
+            ]
+        }
+    ],
+    [
+        {
+            "Store name": "Kroger",
+            "Product name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
+            "image": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
+            "Product cost": 2.99,
+            "Health score": 1.0,
+            "Cost score": 1.0,
+            "Nutrititon highlights": [
+                [
+                    "Vitamin C",
+                    16.77777777777778
+                ],
+                [
+                    "Potassium",
+                    7.23404255319149
+                ],
+                [
+                    "Protein",
+                    4.78
+                ]
+            ],
+            "upcID": "0001450002427",
+            "Street": "2641 Plymouth Rd",
+            "City": "Ann Arbor"
+        },
+        {
+            "Store name": "Kroger",
+            "Product name": "Tasty Bite Organic Madras Lentils 10oz Savory lentil curry",
+            "image": "https://www.kroger.com/product/images/xlarge/right/0078273300002",
+            "Product cost": 4.19,
+            "Health score": 0.6631987233151325,
+            "Cost score": 0.661970362335031,
+            "Nutrititon highlights": [
+                [
+                    "Dietary Fiber",
+                    5.05952380952381
+                ],
+                [
+                    "Vitamin C",
+                    3.5648148148148153
+                ],
+                [
+                    "Iron",
+                    3.2870370370370368
+                ]
+            ],
+            "upcID": "0078273300002",
+            "Street": "2641 Plymouth Rd",
+            "City": "Ann Arbor"
+        },
+        {
+            "Store name": "Kroger",
+            "Product name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
+            "image": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+            "Product cost": 9.99,
+            "Health score": 0.6326350314824212,
+            "Cost score": 0.1112141089783931,
+            "Nutrititon highlights": [
+                [
+                    "Protein",
+                    10.592
+                ],
+                [
+                    "Calcium",
+                    1.784615384615385
+                ],
+                [
+                    "Potassium",
+                    1.565957446808511
+                ]
+            ],
+            "upcID": "0001111096564",
+            "Street": "2641 Plymouth Rd",
+            "City": "Ann Arbor"
+        }
+    ]
+]

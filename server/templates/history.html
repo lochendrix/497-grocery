@@ -97,9 +97,10 @@
                 var trip_entry_header = document.createElement("h3");
                 trip_entry_header.classList.add("trip_entry_header");
                 var timestamp = trip_data["timestamp"];
-                var date = new Date(timestamp * 1000);
-                trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
-                    + " " + date.getDay() + ", " + date.getFullYear();
+                var date = new Date(1748000000000);
+                //trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
+                    //+ " " + date.getDay() + ", " + date.getFullYear();
+                trip_entry_header.innerHTML = "April 22, 2025"
                 
 
                 var trip_entry_list_container = document.createElement("div");

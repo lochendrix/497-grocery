@@ -7,6 +7,24 @@
         <title></title>
 
 
+    <style>
+      .spinner {
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid #555;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        animation: spin 1s linear infinite;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 8px;
+        visibility: hidden;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
     </head>
     <body>
     {% if current_user.is_authenticated %}
@@ -69,6 +87,7 @@
 
             <div id="search_enter_button" class="click_button">
                 <input type="submit" class="click_button_text" value="Enter">
+                <span class="spinner"></span>
             </div>
         </div>
     </form>
@@ -77,7 +96,7 @@
         <div id="list_of_items">
             <div id="location">
                 {% if location_in %}
-                <h2>Showing results for {{ location_in }}:</h2>
+                <h2>Showing high-{{nutrition_area}} items in {{ location_in }}:</h2>
                 {% endif %}
             </div>
 
@@ -349,6 +368,20 @@
                 grocery_list_list.innerHTML = "";
             }
             document.getElementById('clear_grocery_list').addEventListener('click', clear_grocery_list_func)
+
+            // Change Enter button text to "Loading..." on form submit and show spinner
+            document.getElementById('search_location_form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var form = this;
+                var submitBtn = form.querySelector('input[type="submit"]');
+                submitBtn.value = 'Loading...';
+                submitBtn.disabled = true;
+                var spinner = form.querySelector('.spinner');
+                spinner.style.visibility = 'visible';
+                setTimeout(function() {
+                    form.submit();
+                }, 100);
+            });
 
             
         </script>
