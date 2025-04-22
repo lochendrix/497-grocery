@@ -2,7 +2,8 @@
 <html>
     <head>
         <!-- <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> -->
-         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='history_style.css') }}">
         <meta charset="utf-8">
         <title></title>
 
@@ -31,25 +32,169 @@
             </div>
         </div>
 
-        <script>
-            /////////////// CODE FOR CREATING GROCERY LIST ///////////////
-            GROCERY_TRIP_LIST = []
-            fetch('/static/current_grocery_list.json')
-            .then(response => response.json())  // Parse the JSON content
-            .then(data => {
-                //console.log(data)
-                for (var i = 0; i < length(data); i++) {
-                    GROCERY_LIST.push(data[i]);
-                }
-            })
-            .catch(error => {
-                console.error('Error loading the JSON file:', error);
-            });
+        <div id="trip_list"></div>
 
-            for (var i = length(GROCERY_TRIP_LIST) - 1; i >= 0; i++) {
-                // TODO: parse entry and display
+        <script>
+            NUTRITITON_COMPONENTS = [
+                "Added Sugar",
+                "Calcium",
+                "Cholesterol",
+                "Dietary Fiber",
+                "Total Fat",
+                "Iodine",
+                "Iron",
+                "Potassium",
+                "Protein",
+                "Saturated Fat",
+                "Sodium",
+                "Carbohydrate",
+                "Vitamin A",
+                "Vitamin B6",
+                "Vitamin B12",
+                "Vitamin C",
+                "Vitamin D",
+                "Vitamin K",
+                "Zinc",
+            ]
+
+            /////////////// CODE FOR RENDERING GROCERY HISTORY ///////////////
+            var get_trip_nutrititon_info = async function(trip_data) {
+                trip_nutrition = {}
+                for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
+                    var nutrient = NUTRITITON_COMPONENTS[i];
+                    trip_nutrition[nutrient] = 0;
+                }
+
+                for (var i = 0; i < trip_data['groceries'].length; i++) {
+                //for (item in trip_data['groceries']) {
+                    nutrititon_info = trip_data['groceries'][i]['nutrients'];
+                    counter = trip_data['groceries'][i]['count'];
+                    for (var i = 0; i < NUTRITITON_COMPONENTS.length; i++) {
+                        var nutrient = NUTRITITON_COMPONENTS[i];
+                        if (nutrient in nutrititon_info) {
+                            trip_nutrition[nutrient] += counter*nutrititon_info[nutrient]['value'];
+                        }
+                    }
+                }
+
+                return trip_nutrition;
             }
 
+            /*
+            async function addIdAsync(element, id) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                    element.id = id;
+                    resolve(element);
+                    }, 0); 
+                });
+            }
+            */
+            
+            var create_trip_entry = async function(trip_data) {
+                var trip_entry = document.createElement("div");
+                trip_entry.classList.add("trip_entry");
+                var trip_entry_header = document.createElement("h3");
+                trip_entry_header.classList.add("trip_entry_header");
+                var timestamp = trip_data["timestamp"];
+                var date = new Date(timestamp * 1000);
+                trip_entry_header.innerHTML = date.toLocaleString('default', { month: 'long' }) 
+                    + " " + date.getDay() + ", " + date.getFullYear();
+                
+
+                var trip_entry_list_container = document.createElement("div");
+                trip_entry_list_container.classList.add('trip_entry_list_container');
+                var trip_entry_list_header = document.createElement("h4");
+                trip_entry_list_header.classList.add("trip_entry_list_header");
+                trip_entry_list_header.innerHTML = "Grocery List:";
+
+                var trip_entry_list = document.createElement("p");
+                trip_entry_list.classList.add("trip_entry_list");
+                trip_entry_list.innerHTML = "";
+                for (var i = 0; i < trip_data['groceries'].length; i++) {
+                    trip_entry_list.innerHTML += trip_data['groceries'][i]['Name'] 
+                        + " (" + trip_data['groceries'][i]['count'] + "x)";
+                    trip_entry_list.innerHTML += "<br>"
+                }
+
+                
+                
+                var trip_entry_nutrition_container = document.createElement("div");
+                trip_entry_nutrition_container.classList.add('trip_entry_nutrition_container');
+                var trip_entry_nutrition_header = document.createElement("h4");
+                trip_entry_nutrition_header.classList.add("trip_entry_nutrition_header");
+                trip_entry_nutrition_header.innerHTML = "Nutrititon Information:";
+
+                trip_nutrition = await get_trip_nutrititon_info(trip_data);
+                var trip_entry_nutrition = document.createElement("p");
+                trip_entry_nutrition.classList.add("trip_entry_nutrition");
+                trip_entry_nutrition.innerHTML = "";
+                for (nutrient in trip_nutrition) {
+                    trip_entry_nutrition.innerHTML += nutrient + ": " 
+                        + (trip_nutrition[nutrient].toFixed(0)) / 100
+                        + " DV<br>";
+                }
+
+                var trip_entry_divline = document.createElement("div");
+                trip_entry_divline.classList.add("trip_entry_divline");
+                
+                var trip_list = document.getElementById("trip_list");
+                trip_list.appendChild(trip_entry);
+                trip_entry.appendChild(trip_entry_header);
+                trip_entry.appendChild(trip_entry_list_container);
+                trip_entry_list_container.appendChild(trip_entry_list_header);
+                trip_entry_list_container.appendChild(trip_entry_list);
+                trip_entry.appendChild(trip_entry_nutrition_container);
+                trip_entry_nutrition_container.appendChild(trip_entry_nutrition_header);
+                trip_entry_nutrition_container.appendChild(trip_entry_nutrition);
+                trip_entry.appendChild(trip_entry_divline);
+            }
+
+
+            /////////////// CODE FOR LOADING GROCERY HISTORY ///////////////
+            GROCERY_TRIP_LIST = []
+
+            /*
+            var fetch_data = async function() {
+                fetch('/static/user_grocery_list_log.json')
+                .then(response => response.json())  // Parse the JSON content
+                .then(data => {
+                    //console.log(data)
+                    //for (var i = 0; i < data.length; i++) {
+                    //    GROCERY_TRIP_LIST.push(data[i]);
+                    //}
+                    console.log(data);
+                    return data
+                })
+                .catch(error => {
+                    console.error('Error loading the JSON file:', error);
+                    throw error;
+                });
+            }
+            */
+
+            async function fetch_data() {
+                try {
+                    const response = await fetch('/static/user_grocery_list_log.json');
+                    const data = await response.json();
+                    // Process the data
+                    console.log('Data fetched:', data);
+                    return data;
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    throw error;
+                }
+            }
+            
+            var load_full_history = async function() {
+                const populatedData = await fetch_data();
+                GROCERY_TRIP_LIST = populatedData;
+                for (var i = GROCERY_TRIP_LIST.length - 1; i >= 0; i--) {
+                    create_trip_entry(GROCERY_TRIP_LIST[i]);
+                }
+            }
+            
+            load_full_history();
 
         </script>
     {% endif %}

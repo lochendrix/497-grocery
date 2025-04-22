@@ -107,7 +107,7 @@ def create_app():
     @app.route('/save-final-grocery-list', methods=['POST'])
     def save_final_grocery_list():
         new_data = request.json
-        new_data['timestamp'] = time.time()
+        new_data['timestamp'] = int(time.time())
 
         existing_data = []
         try:
