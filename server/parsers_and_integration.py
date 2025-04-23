@@ -6,10 +6,10 @@ from utility import *
 
 from grocery_data_frontend_algs import *
 
-#import threading
+import threading
 
-#SHARED_DATA_LOCK = threading.Lock()
-#GROCERY_LIST_GLOBAL = {}
+SHARED_DATA_LOCK = threading.Lock()
+GROCERY_LIST_GLOBAL = {}
 
 # location_id is a Kroger store ID
 # Product name is a simple name, like "Chicken" (although more detailed names could work)
@@ -40,7 +40,7 @@ def Kroger_find_product(location_id, product_name):
     # Return the pair of [Kroger API, USDA API] returns for the product
     return [product_info['data'][0], product_USDA_info]
 
-'''
+
 # Parse through Kroger and USDA API returns to get final info for one product
 def Kroger_get_final_product_info(store_info, product_name):
     try:
@@ -141,3 +141,4 @@ def Kroger_get_grocery_list(store_info, nutrititon_type=None):
     for key in grocery_list:
         grocery_list_new.append(grocery_list[key])
     return Grocery_List(grocery_list_new)
+'''

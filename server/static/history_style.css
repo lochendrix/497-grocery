@@ -1,7 +1,7 @@
 #trip_list {
     position: absolute;
     width: 100%;
-    top: 500px;
+    top: 600px;
 }
 
 .trip_entry {
@@ -13,6 +13,7 @@
     border-radius: 50px;
     overflow: hidden;
     line-height: 150%;
+    margin-bottom: 100px;
 }
 
 .trip_entry_header {
@@ -21,7 +22,7 @@
     width: 100%;
     text-align: center;
     border-bottom: 3px solid black;
-    font-size: 32px;
+    font-size: 48px;
     line-height: 150%;
 }
 
@@ -65,8 +66,8 @@
 .trip_entry_divline {
     position: absolute;
     width: 0px;
-    top: 60px;
-    height: calc(95% - 60px);
+    top: 100px;
+    height: calc(95% - 100px);
     left: 50%;
     border: 2px solid black;
 }

@@ -1,67 +1,71 @@
 [
     [
         {
-            "Name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
-            "Unit Price": 2.99,
-            "Unit Size": 306.1746,
+            "Name": "Simple Truth Organic\u00ae Spaghetti",
+            "Unit Price": 1.69,
+            "Unit Size": 453.592,
             "Unit Size units": "g",
-            "Category": "Frozen",
-            "upcID": "0001450002427",
-            "image_url": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
+            "Category": "Pasta, Sauces, Grain",
+            "upcID": "0001111085846",
+            "image_url": "https://www.kroger.com/product/images/xlarge/back/0001111085846",
             "store": "Kroger",
             "serving_size": 100.0,
             "serving_size_unit": "g",
             "nutrients": {
                 "Protein": {
-                    "value": 4.78,
+                    "value": 44.642857142857146,
                     "units": "%DV"
                 },
                 "Total Fat": {
-                    "value": 7.8076923076923075,
+                    "value": 4.0979853479853485,
                     "units": "%DV"
                 },
                 "Carbohydrate": {
-                    "value": 2.2218181818181817,
+                    "value": 47.532467532467535,
                     "units": "%DV"
                 },
                 "Energy": {
-                    "value": 90.0,
+                    "value": 637.5,
                     "units": "KCAL"
                 },
                 "Total Sugars": {
-                    "value": 0.76,
+                    "value": 6.375,
                     "units": "G"
                 },
                 "Dietary Fiber": {
-                    "value": 4.285714285714286,
+                    "value": 22.95918367346939,
                     "units": "%DV"
                 },
                 "Calcium": {
-                    "value": 4.461538461538462,
+                    "value": 0.0,
                     "units": "%DV"
                 },
                 "Iron": {
-                    "value": 4.222222222222222,
-                    "units": "%DV"
-                },
-                "Potassium": {
-                    "value": 7.23404255319149,
+                    "value": 0.0,
                     "units": "%DV"
                 },
                 "Sodium": {
-                    "value": 19.565217391304348,
+                    "value": 0.0,
+                    "units": "%DV"
+                },
+                "Vitamin A": {
+                    "value": 0.0,
                     "units": "%DV"
                 },
                 "Vitamin C": {
-                    "value": 16.77777777777778,
+                    "value": 0.0,
                     "units": "%DV"
                 },
                 "Cholesterol": {
-                    "value": 5.333333333333333,
+                    "value": 0.0,
                     "units": "%DV"
                 },
+                "Trans Fat": {
+                    "value": 0.0,
+                    "units": "G"
+                },
                 "Saturated Fat": {
-                    "value": 16.479999999999997,
+                    "value": 0.0,
                     "units": "%DV"
                 }
             },
@@ -71,184 +75,180 @@
             "cost_score": 1.0,
             "highlights": [
                 [
-                    "Vitamin C",
-                    16.77777777777778
-                ],
-                [
-                    "Potassium",
-                    7.23404255319149
-                ],
-                [
                     "Protein",
-                    4.78
+                    44.642857142857146
+                ],
+                [
+                    "Dietary Fiber",
+                    22.95918367346939
                 ]
             ]
         },
         {
-            "Name": "Tasty Bite Organic Madras Lentils 10oz Savory lentil curry",
-            "Unit Price": 4.19,
-            "Unit Size": 283.495,
+            "Name": "Heritage Farm\u00ae Boneless Skinless Chicken Thighs",
+            "Unit Price": 3.99,
+            "Unit Size": 453.592,
             "Unit Size units": "g",
-            "Category": "Natural & Organic",
-            "upcID": "0078273300002",
-            "image_url": "https://www.kroger.com/product/images/xlarge/right/0078273300002",
+            "Category": "Meat & Seafood",
+            "upcID": "0025313650000",
+            "image_url": "https://www.kroger.com/product/images/xlarge/front/0025313650000",
             "store": "Kroger",
             "serving_size": 100.0,
             "serving_size_unit": "g",
             "nutrients": {
-                "Protein": {
-                    "value": 3.066666666666667,
-                    "units": "%DV"
-                },
-                "Total Fat": {
-                    "value": 3.0181623931623935,
-                    "units": "%DV"
-                },
                 "Carbohydrate": {
-                    "value": 1.8681818181818182,
-                    "units": "%DV"
-                },
-                "Energy": {
-                    "value": 46.25,
-                    "units": "KCAL"
-                },
-                "Total Sugars": {
-                    "value": 1.3375000000000001,
-                    "units": "G"
-                },
-                "Dietary Fiber": {
-                    "value": 5.05952380952381,
-                    "units": "%DV"
-                },
-                "Calcium": {
-                    "value": 0.8012820512820513,
-                    "units": "%DV"
-                },
-                "Iron": {
-                    "value": 3.2870370370370368,
-                    "units": "%DV"
-                },
-                "Potassium": {
-                    "value": 2.5886524822695036,
-                    "units": "%DV"
-                },
-                "Sodium": {
-                    "value": 6.938405797101449,
-                    "units": "%DV"
-                },
-                "Vitamin C": {
-                    "value": 3.5648148148148153,
-                    "units": "%DV"
-                },
-                "Cholesterol": {
                     "value": 0.0,
                     "units": "%DV"
                 },
+                "Dietary Fiber": {
+                    "value": 0.0,
+                    "units": "%DV"
+                },
+                "Calcium": {
+                    "value": 0.0,
+                    "units": "%DV"
+                },
+                "Iron": {
+                    "value": 3.1746031746031753,
+                    "units": "%DV"
+                },
+                "Vitamin A": {
+                    "value": 0.0,
+                    "units": "%DV"
+                },
+                "Vitamin C": {
+                    "value": 0.0,
+                    "units": "%DV"
+                },
+                "Protein": {
+                    "value": 23.92857142857143,
+                    "units": "%DV"
+                },
+                "Total Fat": {
+                    "value": 16.36904761904762,
+                    "units": "%DV"
+                },
+                "Energy": {
+                    "value": 167.85714285714286,
+                    "units": "KCAL"
+                },
+                "Total Sugars": {
+                    "value": 0.0,
+                    "units": "G"
+                },
+                "Sodium": {
+                    "value": 4.85248447204969,
+                    "units": "%DV"
+                },
+                "Cholesterol": {
+                    "value": 25.29761904761905,
+                    "units": "%DV"
+                },
+                "Trans Fat": {
+                    "value": 0.0,
+                    "units": "G"
+                },
                 "Saturated Fat": {
-                    "value": 2.6833333333333336,
+                    "value": 17.94642857142857,
                     "units": "%DV"
                 }
             },
             "Street": "2641 Plymouth Rd",
             "City": "Ann Arbor",
-            "health_score": 0.6631987233151325,
-            "cost_score": 0.661970362335031,
+            "health_score": 0.6331843585132438,
+            "cost_score": 0.5178714788858855,
             "highlights": [
                 [
-                    "Dietary Fiber",
-                    5.05952380952381
-                ],
-                [
-                    "Vitamin C",
-                    3.5648148148148153
+                    "Protein",
+                    23.92857142857143
                 ],
                 [
                     "Iron",
-                    3.2870370370370368
+                    3.1746031746031753
                 ]
             ]
         },
         {
-            "Name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
-            "Unit Price": 9.99,
-            "Unit Size": 20.0,
+            "Name": "Oui by Yoplait Cinnamon & Apple Whole Milk Yogurt",
+            "Unit Price": 1.79,
+            "Unit Size": 141.7475,
             "Unit Size units": "g",
-            "Category": "Meat & Seafood",
-            "upcID": "0001111096564",
-            "image_url": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
+            "Category": "Dairy",
+            "upcID": "0007047021999",
+            "image_url": "https://www.kroger.com/product/images/xlarge/front/0007047021999",
             "store": "Kroger",
             "serving_size": 100.0,
             "serving_size_unit": "g",
             "nutrients": {
                 "Protein": {
-                    "value": 10.592,
+                    "value": 12.293333333333333,
                     "units": "%DV"
                 },
                 "Total Fat": {
-                    "value": 0.6256410256410256,
+                    "value": 3.1367521367521363,
                     "units": "%DV"
                 },
                 "Carbohydrate": {
-                    "value": 1.1520000000000001,
+                    "value": 4.853333333333333,
                     "units": "%DV"
                 },
                 "Energy": {
-                    "value": 39.6,
+                    "value": 99.33333333333333,
                     "units": "KCAL"
                 },
                 "Total Sugars": {
-                    "value": 1.184,
+                    "value": 7.16,
                     "units": "G"
                 },
                 "Dietary Fiber": {
-                    "value": 0.5714285714285715,
+                    "value": 3.5714285714285716,
                     "units": "%DV"
                 },
                 "Calcium": {
-                    "value": 1.784615384615385,
+                    "value": 4.564102564102564,
                     "units": "%DV"
                 },
                 "Iron": {
-                    "value": 0.9111111111111112,
+                    "value": 2.4444444444444446,
                     "units": "%DV"
                 },
                 "Potassium": {
-                    "value": 1.565957446808511,
+                    "value": 2.283687943262411,
                     "units": "%DV"
                 },
                 "Sodium": {
-                    "value": 8.730434782608695,
+                    "value": 1.681159420289855,
                     "units": "%DV"
                 },
                 "Vitamin C": {
-                    "value": 1.2888888888888888,
+                    "value": 0.0,
                     "units": "%DV"
                 },
                 "Cholesterol": {
-                    "value": 15.866666666666667,
+                    "value": 1.3333333333333333,
                     "units": "%DV"
                 },
                 "Saturated Fat": {
-                    "value": 0.49399999999999994,
+                    "value": 2.7933333333333334,
                     "units": "%DV"
                 }
             },
             "Street": "2641 Plymouth Rd",
             "City": "Ann Arbor",
-            "health_score": 0.6326350314824212,
-            "cost_score": 0.1112141089783931,
+            "health_score": 0.6100276135963323,
+            "cost_score": 0.42424486541044926,
             "highlights": [
                 [
                     "Protein",
-                    10.592
+                    12.293333333333333
                 ],
                 [
                     "Calcium",
-                    1.784615384615385
+                    4.564102564102564
                 ],
                 [
-                    "Potassium",
-                    1.565957446808511
+                    "Dietary Fiber",
+                    3.5714285714285716
                 ]
             ]
         }
@@ -256,76 +256,68 @@
     [
         {
             "Store name": "Kroger",
-            "Product name": "Birds Eye Steamfresh Creamed Spinach Frozen Vegetables",
-            "image": "https://www.kroger.com/product/images/xlarge/front/0001450002427",
-            "Product cost": 2.99,
+            "Product name": "Simple Truth Organic\u00ae Spaghetti",
+            "image": "https://www.kroger.com/product/images/xlarge/back/0001111085846",
+            "Product cost": 1.69,
             "Health score": 1.0,
             "Cost score": 1.0,
             "Nutrititon highlights": [
                 [
-                    "Vitamin C",
-                    16.77777777777778
-                ],
-                [
-                    "Potassium",
-                    7.23404255319149
-                ],
-                [
                     "Protein",
-                    4.78
+                    44.642857142857146
+                ],
+                [
+                    "Dietary Fiber",
+                    22.95918367346939
                 ]
             ],
-            "upcID": "0001450002427",
+            "upcID": "0001111085846",
             "Street": "2641 Plymouth Rd",
             "City": "Ann Arbor"
         },
         {
             "Store name": "Kroger",
-            "Product name": "Tasty Bite Organic Madras Lentils 10oz Savory lentil curry",
-            "image": "https://www.kroger.com/product/images/xlarge/right/0078273300002",
-            "Product cost": 4.19,
-            "Health score": 0.6631987233151325,
-            "Cost score": 0.661970362335031,
+            "Product name": "Heritage Farm\u00ae Boneless Skinless Chicken Thighs",
+            "image": "https://www.kroger.com/product/images/xlarge/front/0025313650000",
+            "Product cost": 3.99,
+            "Health score": 0.6331843585132438,
+            "Cost score": 0.5178714788858855,
             "Nutrititon highlights": [
                 [
-                    "Dietary Fiber",
-                    5.05952380952381
-                ],
-                [
-                    "Vitamin C",
-                    3.5648148148148153
+                    "Protein",
+                    23.92857142857143
                 ],
                 [
                     "Iron",
-                    3.2870370370370368
+                    3.1746031746031753
                 ]
             ],
-            "upcID": "0078273300002",
+            "upcID": "0025313650000",
             "Street": "2641 Plymouth Rd",
             "City": "Ann Arbor"
         },
         {
             "Store name": "Kroger",
-            "Product name": "Kroger\u00ae Shrimp Tray with Cocktail Sauce",
-            "image": "https://www.kroger.com/product/images/xlarge/left/0001111096564",
-            "Product cost": 9.99,
-            "Health score": 0.6326350314824212,
-            "Cost score": 0.1112141089783931,
+            "Product name": "Oui by Yoplait Cinnamon & Apple Whole Milk Yogurt",
+            "image": "https://www.kroger.com/product/images/xlarge/front/0007047021999",
+            "Product cost": 1.79,
+            "Health score": 0.6100276135963323,
+            "Cost score": 0.42424486541044926,
             "Nutrititon highlights": [
                 [
                     "Protein",
-                    10.592
+                    12.293333333333333
                 ],
                 [
                     "Calcium",
-                    1.784615384615385
+                    4.564102564102564
                 ],
                 [
-                    "Potassium",
-                    1.565957446808511
+                    "Dietary Fiber",
+                    3.5714285714285716
                 ]
             ],
-            "upcID": "0001111096564",
+            "upcID": "0007047021999",
             "Street": "2641 Plymouth Rd",
             "City": "Ann Arbor"
         }

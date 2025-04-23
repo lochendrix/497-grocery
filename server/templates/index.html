@@ -188,6 +188,11 @@
                 var item_contents = document.createElement("div");
                 item_contents.classList.add("item_contents");
 
+                var item_header_box = document.createElement("div");
+                item_header_box.style.margin = "0px";
+                item_header_box.style.marginBottom = "20px";
+                item_header_box.style.width = "100%";
+                item_header_box.style.borderBottom = "3px solid black";
                 var item_header = document.createElement("h3");
                 item_header.classList.add("item_header");
                 item_header.innerHTML = product_entry["Product name"];
@@ -240,8 +245,9 @@
 
                 item_box_to_add_to.appendChild(item);
                 item.appendChild(item_contents);
-                item_contents.appendChild(item_header);
-                item_contents.appendChild(item_add_button);
+                item_contents.appendChild(item_header_box);
+                item_header_box.appendChild(item_header);
+                item_header_box.appendChild(item_add_button);
                 item_contents.appendChild(item_img);
                 item_contents.appendChild(main_score_box);
                 item_contents.appendChild(item_text);
@@ -319,6 +325,7 @@
                     grocery_list_popup_overlay.style.display = 'none';
                     grocery_list_popup.style.display = 'none';
                     nav_grocery_list_display.innerHTML = "View Grocery List";
+                    nav_grocery_list_display.style.backgroundColor = "#FFFDF4";
                     GROCERY_LIST_IS_DISPLAYED = false;
                 }
                 else {
@@ -332,6 +339,7 @@
                     grocery_list_popup_overlay.style.display = 'block';
                     grocery_list_popup.style.display = 'block';
                     nav_grocery_list_display.innerHTML = "Hide Grocery List";
+                    nav_grocery_list_display.style.backgroundColor = "#db9595";
                     GROCERY_LIST_IS_DISPLAYED = true;
                 }
             }

@@ -5,7 +5,10 @@
 
 
 img {
-    width: 100%
+    position: relative;
+    width: 50%;
+    left: 25%;
+    border: 5px black solid;
  }
 
  ul {
@@ -443,8 +446,8 @@ img {
 
 .item_contents {
     position: relative;
-    width: 96%;
-    left: 2%;
+    width: 100%;
+    padding: 0px;
 }
 
 .item_header {

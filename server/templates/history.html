@@ -28,7 +28,12 @@
         <div id="description_flex_box">
             <div id="description_header">Grocery Trip History</div>
             <div id="description_text">
-                A simple list of your previous grocery trips.
+                A simple list of your previous grocery trips. 
+                Each trip has a list of the groceries you purchased, along with the cumulative 
+                nutrition information of those groceries, in units of Daily Values.<br>
+                To understand the nutrition information, here's an example: 
+                if a grocery trip has 3 Daily Values of Vitamin C, that means you bought enough groceries
+                on that trip to consume the recommended amount of Vitamin C for 3 days.
             </div>
         </div>
 
@@ -131,9 +136,9 @@
                 trip_entry_nutrition.classList.add("trip_entry_nutrition");
                 trip_entry_nutrition.innerHTML = "";
                 for (nutrient in trip_nutrition) {
-                    trip_entry_nutrition.innerHTML += nutrient + ": " 
+                    trip_entry_nutrition.innerHTML += "<strong>" + nutrient + ":</strong> " 
                         + (trip_nutrition[nutrient].toFixed(0)) / 100
-                        + " DV<br>";
+                        + " Daily Values<br>";
                 }
 
                 var trip_entry_divline = document.createElement("div");
@@ -190,7 +195,7 @@
             var load_full_history = async function() {
                 const populatedData = await fetch_data();
                 GROCERY_TRIP_LIST = populatedData;
-                for (var i = GROCERY_TRIP_LIST.length - 1; i >= 0; i--) {
+                for (var i = 0; i < GROCERY_TRIP_LIST.length; i++) {
                     create_trip_entry(GROCERY_TRIP_LIST[i]);
                 }
             }

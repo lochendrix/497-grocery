@@ -27,8 +27,20 @@
 
         <div id="description_flex_box">
             <div id="description_header">Summary and Goals</div>
-            <div id="description_text">
+            <div id="summary_description_text">
                 A summary of your grocery trip history and any health goals the site suggests for you.
+                <br>
+                In the tab on the left, choose between "Week", "Month", and "Year" to select how long of
+                a time span you want to examine. The grocery trips are listed below these options; those 
+                with a green box are being counted, while those with an X are not. You can manually 
+                choose which trips are counted by clicking these boxes.
+                <br>
+                In the tab on the right, your daily nutrition intake are shown 
+                based on the selected grocery trips and time span. Here's an example to explain this: 
+                if daily Calclium nutrition intake is 0.5 Daily Values per day, you're consuming about
+                half of the recommended amount of Calcium on a daily basis.
+                <br>
+                In the tab on the bottom, you'll find our recommendations for how to improve your nutrititon.
             </div>
         </div>
 
@@ -192,7 +204,7 @@
             var load_full_history = async function() {
                 const populatedData = await fetch_data();
                 GROCERY_TRIP_LIST = populatedData;
-                for (var i = GROCERY_TRIP_LIST.length - 1; i >= 0; i--) {
+                for (var i = 0; i < GROCERY_TRIP_LIST.length; i++) {
                     await load_trip_entry(GROCERY_TRIP_LIST[i]);
                     GROCERY_TRIP_LIST_MODDED[GROCERY_TRIP_LIST[i]["timestamp"]] = GROCERY_TRIP_LIST[i];
                 }
@@ -386,7 +398,7 @@
                 for (var i = 0; i < num_items_to_rec - 1; i++) {
                     rec_text.innerHTML += ITEMS_BY_NUTRITION[rec_item[0]][i] + ", "
                 }
-                rec_text.innerHTML += ", or " + ITEMS_BY_NUTRITION[rec_item[0]][num_items_to_rec-1]
+                rec_text.innerHTML += "or " + ITEMS_BY_NUTRITION[rec_item[0]][num_items_to_rec-1]
                     + " to your regular diet."
 
                 /*
@@ -408,9 +420,9 @@
                 var trip_entry_nutrition = document.getElementById("nutrition_info_content");
                 trip_entry_nutrition.innerHTML = "";
                 for (nutrient in total_nutrition) {
-                    trip_entry_nutrition.innerHTML += nutrient + ": " 
+                    trip_entry_nutrition.innerHTML += "<strong>" + nutrient + ":</strong> " 
                         + ((total_nutrition[nutrient]) / (100*DAY_WINDOW)).toFixed(2)
-                        + " DV per day<br>";
+                        + " Daily Values per day<br>";
                 }
 
                 recommendations_arr = [];
