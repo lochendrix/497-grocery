@@ -370,10 +370,18 @@
                 alert(result);
             });
 
-            var clear_grocery_list_func = function() {
+            var clear_grocery_list_func = async function() {
                 GROCERY_LIST = {};
                 var grocery_list_list = document.getElementById('grocery_list_list');
                 grocery_list_list.innerHTML = "";
+
+                const response = await fetch('/save-current-grocery-list', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({})
+                });
             }
             document.getElementById('clear_grocery_list').addEventListener('click', clear_grocery_list_func)
 
